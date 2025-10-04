@@ -7,7 +7,7 @@ import type * as Preset from '@docusaurus/preset-classic';
 const config: Config = {
   title: 'Develbyte',
   tagline: 'Engineering, Process, and Career Notes',
-  favicon: 'img/favicon.svg',
+  favicon: 'static/img/favicon.svg',
 
   // Future flags, see https://docusaurus.io/docs/api/docusaurus-config#future
   future: {
@@ -34,6 +34,9 @@ const config: Config = {
     defaultLocale: 'en',
     locales: ['en'],
   },
+
+  // Security headers for enhanced HTTPS security
+  // GitHub Pages automatically handles HTTPS enforcement and security headers
 
   presets: [
     [
@@ -71,7 +74,7 @@ const config: Config = {
 
   themeConfig: {
     // Replace with your project's social card
-    image: 'img/logo.svg',
+    image: 'static/img/logo.svg',
     colorMode: {
       respectPrefersColorScheme: true,
     },
