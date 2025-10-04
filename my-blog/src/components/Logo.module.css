@@ -1,0 +1,47 @@
+.logoContainer {
+  display: flex;
+  align-items: center;
+}
+
+.logoButton {
+  background: #00ff00;
+  border-radius: 4px;
+  padding: 8px 12px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: 700;
+  font-size: 14px;
+  letter-spacing: 0.5px;
+  box-shadow: 0 2px 4px rgba(0, 255, 0, 0.2);
+  transition: all 0.2s ease;
+}
+
+.logoButton:hover {
+  background: #00e600;
+  transform: translateY(-1px);
+  box-shadow: 0 4px 8px rgba(0, 255, 0, 0.3);
+}
+
+.logoText {
+  color: #000000;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen', 'Ubuntu', 'Cantarell', sans-serif;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+/* Dark mode adjustments */
+[data-theme='dark'] .logoButton {
+  background: #00ff00;
+  box-shadow: 0 2px 4px rgba(0, 255, 0, 0.3);
+}
+
+[data-theme='dark'] .logoButton:hover {
+  background: #1aff1a;
+  box-shadow: 0 4px 8px rgba(0, 255, 0, 0.4);
+}
+
+[data-theme='dark'] .logoText {
+  color: #000000;
+}
