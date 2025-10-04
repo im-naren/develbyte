@@ -91,15 +91,6 @@ export default function BlogList(): ReactNode {
   return (
     <section className={styles.blogSection}>
       <div className="container">
-        <div className="row">
-          <div className="col col--12">
-            <div className={styles.blogHeader}>
-              <Heading as="h1" className={styles.siteTitle}>
-                {siteConfig.title}
-              </Heading>
-            </div>
-          </div>
-        </div>
         
         <div className="row">
           <div className="col col--12">
