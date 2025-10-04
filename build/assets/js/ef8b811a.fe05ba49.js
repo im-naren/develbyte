@@ -1,0 +1,1 @@
+"use strict";(self.webpackChunkmy_blog=self.webpackChunkmy_blog||[]).push([[1328],{6600:e=>{e.exports=JSON.parse('{"authors":[{"name":"Narendra Dubey","title":"Builder of Data Systems and Software","url":"https://im-naren.github.io/about/","imageURL":"https://github.com/im-naren.png","key":"narendra","page":null,"count":14}]}')}}]);

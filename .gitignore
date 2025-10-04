@@ -2,7 +2,7 @@
 /node_modules
 
 # Production
-/build
+# /build  # Commented out to allow GitHub Pages deployment
 
 # Generated files
 .docusaurus
