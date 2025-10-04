@@ -96,179 +96,126 @@ export default function BlogList(): ReactNode {
         <div className="row">
           <div className="col col--12">
             <div className={styles.blogArchive}>
-              <div className={styles.yearSection}>
-                <Heading as="h2" className={styles.yearTitle}>
-                  2024
-                </Heading>
-                <div className={styles.postsList}>
-                  <div className={styles.blogItem}>
-                    <span className={styles.blogDate}>January 20, 2024:</span>
-                    <Link to="/blog/modern-web-development-trends-2024" className={styles.blogLink}>
-                      Modern Web Development Trends in 2024
-                    </Link>
-                  </div>
-                  <div className={styles.blogItem}>
-                    <span className={styles.blogDate}>January 15, 2024:</span>
-                    <Link to="/blog/getting-started-with-docusaurus" className={styles.blogLink}>
-                      Getting Started with Docusaurus - Building Your First Blog
-                    </Link>
-                  </div>
+              <div className={styles.postsList}>
+                <div className={styles.blogItem}>
+                  <span className={styles.blogDate}>January 20, 2024:</span>
+                  <Link to="/blog/modern-web-development-trends-2024" className={styles.blogLink}>
+                    Modern Web Development Trends in 2024
+                  </Link>
                 </div>
-              </div>
-              
-              <div className={styles.yearSection}>
-                <Heading as="h2" className={styles.yearTitle}>
-                  2019
-                </Heading>
-                <div className={styles.postsList}>
-                  <div className={styles.blogItem}>
-                    <span className={styles.blogDate}>April 15, 2019:</span>
-                    <Link to="/blog/speculative-execution-in-hadoop" className={styles.blogLink}>
-                      Speculative Execution in Hadoop
-                    </Link>
-                  </div>
-                  <div className={styles.blogItem}>
-                    <span className={styles.blogDate}>April 15, 2019:</span>
-                    <Link to="/blog/troubleshooting-in-redshift" className={styles.blogLink}>
-                      Troubleshooting in Redshift
-                    </Link>
-                  </div>
+                <div className={styles.blogItem}>
+                  <span className={styles.blogDate}>January 15, 2024:</span>
+                  <Link to="/blog/getting-started-with-docusaurus" className={styles.blogLink}>
+                    Getting Started with Docusaurus - Building Your First Blog
+                  </Link>
                 </div>
-              </div>
-              
-              <div className={styles.yearSection}>
-                <Heading as="h2" className={styles.yearTitle}>
-                  2018
-                </Heading>
-                <div className={styles.postsList}>
-                  <div className={styles.blogItem}>
-                    <span className={styles.blogDate}>February 6, 2018:</span>
-                    <Link to="/blog/spell-correct-in-python-part-1" className={styles.blogLink}>
-                      Spell-correct in Python - Part 1
-                    </Link>
-                  </div>
+                <div className={styles.blogItem}>
+                  <span className={styles.blogDate}>April 15, 2019:</span>
+                  <Link to="/blog/speculative-execution-in-hadoop" className={styles.blogLink}>
+                    Speculative Execution in Hadoop
+                  </Link>
                 </div>
-              </div>
-              
-              <div className={styles.yearSection}>
-                <Heading as="h2" className={styles.yearTitle}>
-                  2017
-                </Heading>
-                <div className={styles.postsList}>
-                  <div className={styles.blogItem}>
-                    <span className={styles.blogDate}>July 8, 2017:</span>
-                    <Link to="/blog/introduction-to-pandas" className={styles.blogLink}>
-                      Introduction to Pandas
-                    </Link>
-                  </div>
-                  <div className={styles.blogItem}>
-                    <span className={styles.blogDate}>April 10, 2017:</span>
-                    <Link to="/blog/probability" className={styles.blogLink}>
-                      Probability
-                    </Link>
-                  </div>
+                <div className={styles.blogItem}>
+                  <span className={styles.blogDate}>April 15, 2019:</span>
+                  <Link to="/blog/troubleshooting-in-redshift" className={styles.blogLink}>
+                    Troubleshooting in Redshift
+                  </Link>
                 </div>
-              </div>
-              
-              <div className={styles.yearSection}>
-                <Heading as="h2" className={styles.yearTitle}>
-                  2016
-                </Heading>
-                <div className={styles.postsList}>
-                  <div className={styles.blogItem}>
-                    <span className={styles.blogDate}>November 4, 2016:</span>
-                    <Link to="/blog/zookeeper-sessions-and-life-cycle" className={styles.blogLink}>
-                      Zookeeper Sessions and Life Cycle
-                    </Link>
-                  </div>
-                  <div className={styles.blogItem}>
-                    <span className={styles.blogDate}>October 27, 2016:</span>
-                    <Link to="/blog/zookeeper-namespace-and-operations" className={styles.blogLink}>
-                      Zookeeper Namespace and Operations
-                    </Link>
-                  </div>
-                  <div className={styles.blogItem}>
-                    <span className={styles.blogDate}>October 20, 2016:</span>
-                    <Link to="/blog/zookeeper-introduction-to-zookeeper" className={styles.blogLink}>
-                      Zookeeper Introduction to Zookeeper
-                    </Link>
-                  </div>
-                  <div className={styles.blogItem}>
-                    <span className={styles.blogDate}>September 20, 2016:</span>
-                    <Link to="/blog/message-queue" className={styles.blogLink}>
-                      Message Queue
-                    </Link>
-                  </div>
+                <div className={styles.blogItem}>
+                  <span className={styles.blogDate}>February 6, 2018:</span>
+                  <Link to="/blog/spell-correct-in-python-part-1" className={styles.blogLink}>
+                    Spell-correct in Python - Part 1
+                  </Link>
                 </div>
-              </div>
-              
-              <div className={styles.yearSection}>
-                <Heading as="h2" className={styles.yearTitle}>
-                  2015
-                </Heading>
-                <div className={styles.postsList}>
-                  <div className={styles.blogItem}>
-                    <span className={styles.blogDate}>September 14, 2015:</span>
-                    <Link to="/blog/normalisation" className={styles.blogLink}>
-                      Normalisation
-                    </Link>
-                  </div>
-                  <div className={styles.blogItem}>
-                    <span className={styles.blogDate}>May 25, 2015:</span>
-                    <Link to="/blog/how-to-sort-a-hashmap-on-values" className={styles.blogLink}>
-                      How to Sort a HashMap on Values
-                    </Link>
-                  </div>
-                  <div className={styles.blogItem}>
-                    <span className={styles.blogDate}>May 15, 2015:</span>
-                    <Link to="/blog/how-to-implement-singly-linked-list-in-java" className={styles.blogLink}>
-                      How to Implement Singly Linked List in Java
-                    </Link>
-                  </div>
-                  <div className={styles.blogItem}>
-                    <span className={styles.blogDate}>May 14, 2015:</span>
-                    <Link to="/blog/introduction-to-mapreduce" className={styles.blogLink}>
-                      Introduction to MapReduce
-                    </Link>
-                  </div>
-                  <div className={styles.blogItem}>
-                    <span className={styles.blogDate}>May 3, 2015:</span>
-                    <Link to="/blog/hdfs-architecture" className={styles.blogLink}>
-                      HDFS Architecture
-                    </Link>
-                  </div>
-                  <div className={styles.blogItem}>
-                    <span className={styles.blogDate}>March 10, 2015:</span>
-                    <Link to="/blog/mapreduce-execution-in-hadoop" className={styles.blogLink}>
-                      MapReduce Execution in Hadoop
-                    </Link>
-                  </div>
-                  <div className={styles.blogItem}>
-                    <span className={styles.blogDate}>March 7, 2015:</span>
-                    <Link to="/blog/difference-between-unix-and-linux" className={styles.blogLink}>
-                      Difference Between Unix and Linux
-                    </Link>
-                  </div>
-                  <div className={styles.blogItem}>
-                    <span className={styles.blogDate}>February 3, 2015:</span>
-                    <Link to="/blog/how-to-find-out-next-and-previous-day-of-week-in-oracle" className={styles.blogLink}>
-                      How to Find Out Next and Previous Day of Week in Oracle
-                    </Link>
-                  </div>
+                <div className={styles.blogItem}>
+                  <span className={styles.blogDate}>July 8, 2017:</span>
+                  <Link to="/blog/introduction-to-pandas" className={styles.blogLink}>
+                    Introduction to Pandas
+                  </Link>
                 </div>
-              </div>
-              
-              <div className={styles.yearSection}>
-                <Heading as="h2" className={styles.yearTitle}>
-                  2014
-                </Heading>
-                <div className={styles.postsList}>
-                  <div className={styles.blogItem}>
-                    <span className={styles.blogDate}>March 11, 2014:</span>
-                    <Link to="/blog/welcome-to-develbyte" className={styles.blogLink}>
-                      Welcome to Develbyte
-                    </Link>
-                  </div>
+                <div className={styles.blogItem}>
+                  <span className={styles.blogDate}>April 10, 2017:</span>
+                  <Link to="/blog/probability" className={styles.blogLink}>
+                    Probability
+                  </Link>
+                </div>
+                <div className={styles.blogItem}>
+                  <span className={styles.blogDate}>November 4, 2016:</span>
+                  <Link to="/blog/zookeeper-sessions-and-life-cycle" className={styles.blogLink}>
+                    Zookeeper Sessions and Life Cycle
+                  </Link>
+                </div>
+                <div className={styles.blogItem}>
+                  <span className={styles.blogDate}>October 27, 2016:</span>
+                  <Link to="/blog/zookeeper-namespace-and-operations" className={styles.blogLink}>
+                    Zookeeper Namespace and Operations
+                  </Link>
+                </div>
+                <div className={styles.blogItem}>
+                  <span className={styles.blogDate}>October 20, 2016:</span>
+                  <Link to="/blog/zookeeper-introduction-to-zookeeper" className={styles.blogLink}>
+                    Zookeeper Introduction to Zookeeper
+                  </Link>
+                </div>
+                <div className={styles.blogItem}>
+                  <span className={styles.blogDate}>September 20, 2016:</span>
+                  <Link to="/blog/message-queue" className={styles.blogLink}>
+                    Message Queue
+                  </Link>
+                </div>
+                <div className={styles.blogItem}>
+                  <span className={styles.blogDate}>September 14, 2015:</span>
+                  <Link to="/blog/normalisation" className={styles.blogLink}>
+                    Normalisation
+                  </Link>
+                </div>
+                <div className={styles.blogItem}>
+                  <span className={styles.blogDate}>May 25, 2015:</span>
+                  <Link to="/blog/how-to-sort-a-hashmap-on-values" className={styles.blogLink}>
+                    How to Sort a HashMap on Values
+                  </Link>
+                </div>
+                <div className={styles.blogItem}>
+                  <span className={styles.blogDate}>May 15, 2015:</span>
+                  <Link to="/blog/how-to-implement-singly-linked-list-in-java" className={styles.blogLink}>
+                    How to Implement Singly Linked List in Java
+                  </Link>
+                </div>
+                <div className={styles.blogItem}>
+                  <span className={styles.blogDate}>May 14, 2015:</span>
+                  <Link to="/blog/introduction-to-mapreduce" className={styles.blogLink}>
+                    Introduction to MapReduce
+                  </Link>
+                </div>
+                <div className={styles.blogItem}>
+                  <span className={styles.blogDate}>May 3, 2015:</span>
+                  <Link to="/blog/hdfs-architecture" className={styles.blogLink}>
+                    HDFS Architecture
+                  </Link>
+                </div>
+                <div className={styles.blogItem}>
+                  <span className={styles.blogDate}>March 10, 2015:</span>
+                  <Link to="/blog/mapreduce-execution-in-hadoop" className={styles.blogLink}>
+                    MapReduce Execution in Hadoop
+                  </Link>
+                </div>
+                <div className={styles.blogItem}>
+                  <span className={styles.blogDate}>March 7, 2015:</span>
+                  <Link to="/blog/difference-between-unix-and-linux" className={styles.blogLink}>
+                    Difference Between Unix and Linux
+                  </Link>
+                </div>
+                <div className={styles.blogItem}>
+                  <span className={styles.blogDate}>February 3, 2015:</span>
+                  <Link to="/blog/how-to-find-out-next-and-previous-day-of-week-in-oracle" className={styles.blogLink}>
+                    How to Find Out Next and Previous Day of Week in Oracle
+                  </Link>
+                </div>
+                <div className={styles.blogItem}>
+                  <span className={styles.blogDate}>March 11, 2014:</span>
+                  <Link to="/blog/welcome-to-develbyte" className={styles.blogLink}>
+                    Welcome to Develbyte
+                  </Link>
                 </div>
               </div>
             </div>

@@ -48,9 +48,10 @@
 .blogDate {
   font-size: 1rem;
   color: var(--ifm-color-content);
-  margin-right: 1rem;
-  min-width: 120px;
+  margin-right: 1.5rem;
+  min-width: 140px;
   font-weight: 400;
+  text-align: right;
 }
 
 .blogLink {
@@ -122,6 +123,7 @@
     margin-right: 0;
     margin-bottom: 0.2rem;
     min-width: auto;
+    text-align: left;
   }
 }
 
