@@ -6,12 +6,12 @@
 .logoButton {
   background: #00ff00;
   border-radius: 4px;
-  padding: 8px 12px;
+  padding: 12px 16px;
   display: inline-flex;
   align-items: center;
   justify-content: center;
   font-weight: 700;
-  font-size: 18px;
+  font-size: 16px;
   letter-spacing: 0.5px;
   box-shadow: 0 2px 4px rgba(0, 255, 0, 0.2);
   transition: all 0.2s ease;
