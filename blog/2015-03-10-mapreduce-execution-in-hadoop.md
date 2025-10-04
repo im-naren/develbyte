@@ -10,6 +10,8 @@ date: 2015-03-10
 
 In this article we have tried to summaries,  how a MapReduce program executes in Hadoop environment.
 
+<!-- truncate -->
+
 ## MapReduce 1 Execution Sequence:
 
 MapReduce execution starts with below command.

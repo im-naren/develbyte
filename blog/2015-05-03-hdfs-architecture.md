@@ -10,6 +10,8 @@ date: 2015-05-03
 
 The Hadoop Distributed File System (HDFS) is a highly fault tolerant file system designed and optimized to be deployed on a distributed infrastructure established with a bunch commodity hardware. HDFS provides high throughput access to application data and is best suited for applications that have large data sets. Unlike existing distributed file systems HDFS have loosen up a few POSIX Standards to enable streaming access to file system data. HDFS was originally developed as an infrastructure for the Apache Nutch web search engine project.
 
+<!-- truncate -->
+
 ## Inside HDFS
 
 ![hdfs-architecture.png](/img/hdfs-architecture.png)

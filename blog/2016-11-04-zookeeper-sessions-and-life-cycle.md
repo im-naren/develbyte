@@ -14,6 +14,8 @@ Sessions is very important and quite critical for the operation of ZooKeeper. Al
 
 The client initially connects to any server in the ensemble, and only to a single server. It uses a TCP connection to communicate with the server, but the session may be moved to a different server if the client has not heard from its current server for some time. Moving a session to a different server is handled transparently by the ZooKeeper client library.
 
+<!-- truncate -->
+
 Sessions offer order guarantees, which means that requests in a session are executed in FIFO (first in, first out) order. Typically, a client has only a single session open, so its requests are all executed in FIFO order. When a client creates a ZooKeeper handle using a specific language binding, it establishes a session with the service. If a client has multiple concurrent sessions, FIFO ordering is not necessarily preserved across the sessions. Consecutive sessions of the same client, even if they don't overlap in time, also do not necessarily preserve FIFO order.
 
 ### Here is how it can happen in this case:

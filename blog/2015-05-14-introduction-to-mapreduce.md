@@ -12,6 +12,8 @@ date: 2015-05-14
 
 In this article we'll see how MapReduce processes the data, I am considering the Word Count program as a example, yeah!! this is the worlds most famous MapReduce program!!
 
+<!-- truncate -->
+
 ## Overview
 
 The MapReduce framework operates exclusively on *&lt;key, value&gt;* pairs, that is, the framework views the input to the job as a set of *&lt;key, value&gt;* pairs and produces a set of *&lt;key, value&gt;* pairs as the output of the job, conceivably of different types.

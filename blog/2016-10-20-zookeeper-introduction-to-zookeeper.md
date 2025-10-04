@@ -14,6 +14,8 @@ Co-ordinating between the services in a distributed application is a complex pro
 
 Zookeper is open-sorced to Apache by Yahoo. Apache Zookeper have became standard for organising the services in Hadoop, kafka and other distributed frameworks.
 
+<!-- truncate -->
+
 ## What is a distributed application?
 
 Distributed applications are the type of application comprised of multiple software components running independently and concurrently across multiple physical machines. Distributed applications are required to do resource intensive computions which is difficult or impossible to do in a non-distributed environment. The group is machines running the distributed applications are togethere called as cluster and each machine individually called as Nodes. Distributed applications provides scalability and performance along with other benifits, But it can also easly lead to various complexities like Race Condition, DeadLock, Inconsistency, This is where Zookeeper comes to rescue. Zookeper helps to create co-ordianation between the tasks and maintain shared data with robust syncronisation technique.

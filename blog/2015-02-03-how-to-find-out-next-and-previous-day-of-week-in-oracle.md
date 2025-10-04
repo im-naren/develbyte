@@ -10,6 +10,8 @@ date: 2015-02-03
 
 I have seen people writing number of lines of code to find out the date on a specific day in current or previous week, most often we need Friday the last working day of the week. We have a pretty simple way to find out in Oracle Queries.
 
+<!-- truncate -->
+
 ## Logic:
 - Add a number of the day you want the date for in your current date, assuming Monday as day 1, Tuesday as day 2 and so on.
 

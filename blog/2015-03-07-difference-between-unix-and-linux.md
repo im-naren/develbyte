@@ -12,6 +12,8 @@ Back in 1969, UNIX has evolved through a number of different versions and enviro
 
 Linux is an open source (free to use and redistribute under GNU licenses) operating system widely used for computer hardware and software, game development, tablet PCS, mainframes etc. UNIX is a copyrighted name only big companies (IBM, HP etc…) are allowed to use the UNIX copyright and names. UNIX is commonly used in internet servers, workstations and PCs by Solaris, Intel, and HP etc.
 
+<!-- truncate -->
+
 Linux Kernel was designed by Linus Torvalds with an intention of developing a Unix-like operating system as an open source alternative of UNIX environment.  An administrator or developer who supports Linux systems might find it uncomfortable to move to a commercial UNIX system. On the whole, the foundations of any UNIX-like operating system (tools, filesystem layout, programming APIs) are fairly standardized. However, some details of the systems show significant differences. The remainder of this article covers the details of these differences.
 
 ## In The Box

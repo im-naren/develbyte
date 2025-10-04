@@ -12,6 +12,8 @@ HashMap doesn't preserve any order by default. If order is required we need to s
 
 In this article I have tried to explain how to sort a HasMap based on values.
 
+<!-- truncate -->
+
 ## HasMap sorting by Value
 
 in this example I have used TreeMap to sort the HashMap. unlike a HashMap, a TreeMap guarantees that its elements will be sorted in ascending key order.

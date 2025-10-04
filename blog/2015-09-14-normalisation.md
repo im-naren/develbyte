@@ -14,6 +14,8 @@ Data should only be stored once and avoid storing data that can be calculated fr
 
 The removal of redundancy helps to prevent insertion, deletion, and update errors, since the data is only available in one attribute of one table in the database.
 
+<!-- truncate -->
+
 If redundancy exists in the database then problems can arise when the database is in normal operation:
 
 - When data is inserted the data must be duplicated correctly in all places where there is redundancy. For instance, if two tables exist for in a database, and both tables contain the employee name, then creating a new employee entry requires that both tables be updated with the employee name.

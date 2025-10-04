@@ -12,6 +12,8 @@ A **Linked List** is a dynamic data structure. The number of nodes in a list is 
 
 Linked lists and arrays are similar since they both store collections of data. The terminology is that arrays and linked lists store "elements" on behalf of "client" code. The specific type of element is not important since essentially the same structure works to store elements of any type. The size of the array is fixed where Linked List is a dynamic and also Inserting new elements at the front or in middle of an array is potentially expensive because existing elements need to be shifted over to make room.
 
+<!-- truncate -->
+
 ## Types of Linked List
 
 - Singly Linked List

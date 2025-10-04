@@ -12,6 +12,8 @@ date: 2016-09-20
 
 Message passing is a technique to enable inter-process communication (IPC), or for inter-thread communication within the same process communication between two distributed or non-distributed parallel processes in synchronous or asynchronous mode, The communications are completed by the sending of messages (functions, signals and data packets) to recipients.
 
+<!-- truncate -->
+
 Most widely used messaging Patterns are:
 - request-response
 - Messaging-Queue

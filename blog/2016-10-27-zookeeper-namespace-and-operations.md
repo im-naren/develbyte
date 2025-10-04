@@ -14,6 +14,8 @@ ZooKeeper has a hierarchal name space(as shown below), much like a distributed f
 
 ![zookeeper-data-model](/img/zookeeper-data-model.png)
 
+<!-- truncate -->
+
 The root node contains four more nodes, and three of those nodes have nodes under them. The leaf nodes are the data.
 
 ## Znode:
