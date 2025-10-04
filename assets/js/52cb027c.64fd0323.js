@@ -1,0 +1,1 @@
+"use strict";(self.webpackChunkmy_blog=self.webpackChunkmy_blog||[]).push([[9117],{9199:e=>{e.exports=JSON.parse('{"metadata":{"permalink":"/develbyte/blog","page":1,"postsPerPage":10,"totalPages":2,"totalCount":20,"nextPage":"/develbyte/blog/page/2","blogDescription":"Blog","blogTitle":"Blog"}}')}}]);
