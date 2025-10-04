@@ -35,7 +35,7 @@
 }
 
 .postsList {
-  margin-left: 1rem;
+  margin-left: 0;
 }
 
 .blogItem {
@@ -109,7 +109,7 @@
   }
   
   .postsList {
-    margin-left: 0.5rem;
+    margin-left: 0;
   }
   
   .blogItem {
