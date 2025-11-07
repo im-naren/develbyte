@@ -5,20 +5,20 @@
 
 /* ClickHouse Color Palette */
 :root {
-  /* Primary Colors - ClickHouse Yellow & Orange */
-  --ifm-color-primary: #FFCC00;
-  --ifm-color-primary-dark: #E6B800;
-  --ifm-color-primary-darker: #CCAA00;
-  --ifm-color-primary-darkest: #B39900;
-  --ifm-color-primary-light: #FFD633;
-  --ifm-color-primary-lighter: #FFE066;
-  --ifm-color-primary-lightest: #FFEB99;
+  /* Primary Colors - ClickHouse Bright Yellow (extracted from palette) */
+  --ifm-color-primary: #FFFF66;
+  --ifm-color-primary-dark: #FFFF33;
+  --ifm-color-primary-darker: #FFFF00;
+  --ifm-color-primary-darkest: #E6E600;
+  --ifm-color-primary-light: #FFFF99;
+  --ifm-color-primary-lighter: #FFFFCC;
+  --ifm-color-primary-lightest: #FFFFED;
   
   /* Secondary/Accent - Orange */
-  --ifm-color-secondary: #FF6B00;
-  --ifm-color-secondary-dark: #E66000;
-  --ifm-color-secondary-darker: #CC5500;
-  --ifm-color-secondary-darkest: #B34A00;
+  --ifm-color-secondary: #FF8A3D;
+  --ifm-color-secondary-dark: #FF6B00;
+  --ifm-color-secondary-darker: #E66000;
+  --ifm-color-secondary-darkest: #CC5500;
   
   /* Success colors */
   --ifm-color-success: #10B981;
@@ -26,12 +26,12 @@
   --ifm-color-success-contrast-background: #F0FDF4;
   
   /* Warning colors */
-  --ifm-color-warning: #FFCC00;
-  --ifm-color-warning-dark: #E6B800;
+  --ifm-color-warning: #FFFF66;
+  --ifm-color-warning-dark: #FFFF33;
   
   /* Code styling */
   --ifm-code-font-size: 95%;
-  --docusaurus-highlighted-code-line-bg: rgba(255, 204, 0, 0.1);
+  --docusaurus-highlighted-code-line-bg: rgba(255, 255, 102, 0.1);
   
   /* Background colors */
   --ifm-background-color: #ffffff;
@@ -50,69 +50,69 @@
   
   /* Link colors */
   --ifm-link-color: #1A1A1A;
-  --ifm-link-hover-color: #FFCC00;
+  --ifm-link-hover-color: #FFFF66;
   
   /* Button styling */
   --ifm-button-border-radius: 6px;
   
   /* Navbar styling */
-  --ifm-navbar-background-color: #1A1A1A;
+  --ifm-navbar-background-color: #1F1F1C;
   --ifm-navbar-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-  --ifm-navbar-link-color: #ffffff;
-  --ifm-navbar-link-hover-color: #FFCC00;
+  --ifm-navbar-link-color: #CDCDC9;
+  --ifm-navbar-link-hover-color: #FFFF66;
   
   /* Footer styling */
-  --ifm-footer-background-color: #1A1A1A;
-  --ifm-footer-color: #9ca3af;
-  --ifm-footer-link-color: #d1d5db;
-  --ifm-footer-link-hover-color: #FFCC00;
+  --ifm-footer-background-color: #1A1A18;
+  --ifm-footer-color: #9B9B94;
+  --ifm-footer-link-color: #CDCDC9;
+  --ifm-footer-link-hover-color: #FFFF66;
 }
 
 /* Dark mode styling - ClickHouse theme */
 [data-theme='dark'] {
   /* Primary Colors */
-  --ifm-color-primary: #FFCC00;
-  --ifm-color-primary-dark: #E6B800;
-  --ifm-color-primary-darker: #CCAA00;
-  --ifm-color-primary-darkest: #B39900;
-  --ifm-color-primary-light: #FFD633;
-  --ifm-color-primary-lighter: #FFE066;
-  --ifm-color-primary-lightest: #FFEB99;
+  --ifm-color-primary: #FFFF66;
+  --ifm-color-primary-dark: #FFFF33;
+  --ifm-color-primary-darker: #FFFF00;
+  --ifm-color-primary-darkest: #E6E600;
+  --ifm-color-primary-light: #FFFF99;
+  --ifm-color-primary-lighter: #FFFFCC;
+  --ifm-color-primary-lightest: #FFFFED;
   
   /* Secondary/Accent */
-  --ifm-color-secondary: #FF8533;
+  --ifm-color-secondary: #FF8A3D;
   --ifm-color-secondary-dark: #FF6B00;
   
-  --docusaurus-highlighted-code-line-bg: rgba(255, 204, 0, 0.15);
+  --docusaurus-highlighted-code-line-bg: rgba(255, 255, 102, 0.15);
   
-  /* Background colors */
-  --ifm-background-color: #1A1A1A;
-  --ifm-background-surface-color: #2D2D2D;
+  /* Background colors - True ClickHouse background */
+  --ifm-background-color: #1F1F1C;
+  --ifm-background-surface-color: #242421;
   
-  /* Text colors */
-  --ifm-font-color-base: #f5f5f5;
-  --ifm-font-color-secondary: #d1d5db;
+  /* Text colors - ClickHouse grays */
+  --ifm-font-color-base: #CDCDC9;
+  --ifm-font-color-secondary: #9B9B94;
   
   /* Border colors */
-  --ifm-border-color: #3f3f3f;
+  --ifm-border-color: #242421;
   
   /* Card styling */
-  --ifm-card-background-color: #2D2D2D;
+  --ifm-card-background-color: #242421;
   
   /* Link colors */
-  --ifm-link-color: #FFCC00;
-  --ifm-link-hover-color: #FFD633;
+  --ifm-link-color: #FFFF66;
+  --ifm-link-hover-color: #FFFF99;
   
   /* Navbar styling */
-  --ifm-navbar-background-color: #1A1A1A;
-  --ifm-navbar-link-color: #ffffff;
-  --ifm-navbar-link-hover-color: #FFCC00;
+  --ifm-navbar-background-color: #1F1F1C;
+  --ifm-navbar-link-color: #CDCDC9;
+  --ifm-navbar-link-hover-color: #FFFF66;
   
   /* Footer styling */
-  --ifm-footer-background-color: #0D0D0D;
-  --ifm-footer-color: #9ca3af;
-  --ifm-footer-link-color: #d1d5db;
-  --ifm-footer-link-hover-color: #FFCC00;
+  --ifm-footer-background-color: #1A1A18;
+  --ifm-footer-color: #9B9B94;
+  --ifm-footer-link-color: #CDCDC9;
+  --ifm-footer-link-hover-color: #FFFF66;
 }
 
 /* Typography - Modern and clean */
@@ -124,11 +124,22 @@ body {
   -moz-osx-font-smoothing: grayscale;
 }
 
+/* Text Selection - ClickHouse yellow highlight */
+::selection {
+  background-color: #FFFF66;
+  color: #1F1F1C;
+}
+
+::-moz-selection {
+  background-color: #FFFF66;
+  color: #1F1F1C;
+}
+
 /* Hero styling */
 .hero__title {
   font-weight: 700;
   font-size: 3.5rem;
-  color: #FFCC00;
+  color: var(--ifm-font-color-base);
   margin-bottom: 1rem;
 }
 
@@ -144,40 +155,40 @@ body {
 
 /* Navbar - ClickHouse dark navbar */
 .navbar {
-  background-color: #1A1A1A !important;
-  border-bottom: 3px solid #FFCC00;
+  background-color: #1F1F1C !important;
+  border-bottom: 3px solid #FFFF66;
 }
 
 .navbar__link {
-  color: #ffffff !important;
+  color: #E8E8E8 !important;
   font-weight: 500;
   transition: color 0.2s;
 }
 
 .navbar__link:hover,
 .navbar__link--active {
-  color: #FFCC00 !important;
+  color: #FFFF66 !important;
 }
 
 .navbar__brand {
-  color: #FFCC00 !important;
+  color: #FFFF66 !important;
 }
 
 /* Navbar toggle button for mobile */
 .navbar__toggle {
-  color: #FFCC00 !important;
+  color: #FFFF66 !important;
 }
 
 .navbar-sidebar {
-  background-color: #1A1A1A !important;
+  background-color: #1F1F1C !important;
 }
 
 .navbar-sidebar__item {
-  color: #ffffff !important;
+  color: #E8E8E8 !important;
 }
 
 .navbar-sidebar__close {
-  color: #FFCC00 !important;
+  color: #FFFF66 !important;
 }
 
 /* Blog styling */
@@ -199,12 +210,7 @@ body {
   font-size: 2.5rem;
   font-weight: 700;
   margin-bottom: 1rem;
-  color: #FFCC00;
-  transition: color 0.2s;
-}
-
-.blog-post-page h1:hover {
-  color: #FF6B00;
+  color: var(--ifm-font-color-base);
 }
 
 .blog-post-page h2 {
@@ -212,12 +218,7 @@ body {
   font-weight: 600;
   margin-top: 2rem;
   margin-bottom: 1rem;
-  color: #FFCC00;
-  transition: color 0.2s;
-}
-
-.blog-post-page h2:hover {
-  color: #FF6B00;
+  color: var(--ifm-font-color-base);
 }
 
 .blog-post-page h3 {
@@ -225,11 +226,28 @@ body {
   font-weight: 600;
   margin-top: 1.5rem;
   margin-bottom: 0.75rem;
-  color: #f5f5f5;
+  color: var(--ifm-font-color-base);
 }
 
 [data-theme='light'] .blog-post-page h3 {
   color: #1A1A1A;
+}
+
+/* Inline code styling - ClickHouse orange */
+code {
+  background: rgba(255, 138, 61, 0.1);
+  color: #FF8A3D;
+  border: 1px solid rgba(255, 138, 61, 0.2);
+  border-radius: 3px;
+  padding: 0.15rem 0.4rem;
+  font-size: 0.9em;
+  font-weight: 600;
+}
+
+[data-theme='dark'] code {
+  background: rgba(255, 138, 61, 0.15);
+  color: #FF8A3D;
+  border-color: rgba(255, 138, 61, 0.3);
 }
 
 /* Code block styling */
@@ -239,34 +257,42 @@ body {
   border: 1px solid var(--ifm-border-color);
 }
 
+/* Don't apply inline code styles to code blocks */
+.prism-code code {
+  background: transparent;
+  border: none;
+  padding: 0;
+  color: inherit;
+}
+
 /* Button styling - ClickHouse yellow buttons */
 .button--primary {
-  background: #FFCC00;
-  color: #1A1A1A;
+  background: #FFFF66;
+  color: #0D0D0D;
   border: none;
   font-weight: 700;
   transition: all 0.2s ease;
-  box-shadow: 0 2px 8px rgba(255, 204, 0, 0.3);
+  box-shadow: 0 2px 8px rgba(255, 255, 102, 0.3);
 }
 
 .button--primary:hover {
-  background: #FFD633;
+  background: #FFFF99;
   color: #000;
-  box-shadow: 0 4px 12px rgba(255, 204, 0, 0.5);
+  box-shadow: 0 4px 12px rgba(255, 255, 102, 0.5);
   transform: translateY(-2px);
 }
 
 .button--secondary {
   background: transparent;
   color: #1A1A1A;
-  border: 2px solid #FFCC00;
+  border: 2px solid #FFFF66;
   font-weight: 600;
   transition: all 0.2s ease;
 }
 
 .button--secondary:hover {
-  background: #FFCC00;
-  color: #1A1A1A;
+  background: #FFFF66;
+  color: #0D0D0D;
 }
 
 /* Card styling */
@@ -279,22 +305,22 @@ body {
 
 .card:hover {
   transform: translateY(-4px);
-  box-shadow: 0 8px 16px rgba(255, 204, 0, 0.2);
-  border-color: #FFCC00;
+  box-shadow: 0 8px 16px rgba(255, 255, 102, 0.2);
+  border-color: #FFFF66;
 }
 
 /* Footer styling */
 .footer {
   background-color: var(--ifm-footer-background-color);
-  border-top: 3px solid #FFCC00;
+  border-top: 3px solid #FFFF66;
 }
 
 .footer__link-item:hover {
-  color: #FFCC00 !important;
+  color: #FFFF66 !important;
 }
 
 .footer__title {
-  color: #FFCC00;
+  color: #FFFF66;
   font-weight: 700;
 }
 
@@ -304,11 +330,11 @@ body {
 }
 
 .table-of-contents__link:hover {
-  color: #FF6B00;
+  color: #FF8A3D;
 }
 
 .table-of-contents__link--active {
-  color: #FFCC00;
+  color: #FFFF66;
   font-weight: 600;
 }
 
@@ -319,8 +345,8 @@ body {
 }
 
 .pagination-nav__link:hover {
-  border-color: #FFCC00;
-  background: rgba(255, 204, 0, 0.05);
+  border-color: #FFFF66;
+  background: rgba(255, 255, 102, 0.05);
 }
 
 /* Tabs */
@@ -330,17 +356,17 @@ body {
 }
 
 .tabs__item:hover {
-  color: #FF6B00;
+  color: #FF8A3D;
 }
 
 .tabs__item--active {
   color: #1A1A1A;
-  border-bottom-color: #FFCC00;
+  border-bottom-color: #FFFF66;
   font-weight: 600;
 }
 
 [data-theme='dark'] .tabs__item--active {
-  color: #FFCC00;
+  color: #FFFF66;
 }
 
 /* Admonitions */
@@ -349,23 +375,23 @@ body {
 }
 
 .admonition-caution {
-  border-left-color: #FFCC00;
+  border-left-color: #FFFF66;
 }
 
 .admonition-note {
-  border-left-color: #FFCC00;
+  border-left-color: #FFFF66;
 }
 
 /* Search bar */
 .navbar__search-input {
   background: rgba(255, 255, 255, 0.1);
-  color: #ffffff;
-  border: 1px solid rgba(255, 204, 0, 0.3);
+  color: #E8E8E8;
+  border: 1px solid rgba(255, 255, 102, 0.3);
 }
 
 .navbar__search-input:focus {
-  border-color: #FFCC00;
-  box-shadow: 0 0 0 2px rgba(255, 204, 0, 0.2);
+  border-color: #FFFF66;
+  box-shadow: 0 0 0 2px rgba(255, 255, 102, 0.2);
 }
 
 /* Dropdown menu */
@@ -376,12 +402,12 @@ body {
 }
 
 .dropdown__link--active {
-  background: rgba(255, 204, 0, 0.1);
-  color: #FFCC00;
+  background: rgba(255, 255, 102, 0.1);
+  color: #FFFF66;
 }
 
 .dropdown__link:hover {
-  color: #FF6B00;
+  color: #FF8A3D;
 }
 
 /* Sidebar */
@@ -391,13 +417,13 @@ body {
 }
 
 .menu__link:hover {
-  color: #FF6B00;
-  background: rgba(255, 204, 0, 0.05);
+  color: #FF8A3D;
+  background: rgba(255, 255, 102, 0.05);
 }
 
 .menu__link--active {
-  color: #FFCC00;
-  background: rgba(255, 204, 0, 0.1);
+  color: #FFFF66;
+  background: rgba(255, 255, 102, 0.1);
   font-weight: 600;
 }
 
@@ -407,23 +433,30 @@ body {
 }
 
 .breadcrumbs__link:hover {
-  color: #FF6B00;
+  color: #FF8A3D;
 }
 
 .breadcrumbs__link--active {
-  color: #FFCC00;
+  color: #FFFF66;
 }
 
 /* Tags */
 .badge {
-  border: 1px solid #FFCC00;
-  background: rgba(255, 204, 0, 0.1);
-  color: var(--ifm-font-color-base);
+  border: 1px solid #FF8A3D;
+  background: rgba(255, 138, 61, 0.1);
+  color: #FF8A3D;
+  font-weight: 600;
 }
 
 [data-theme='dark'] .badge {
-  background: rgba(255, 204, 0, 0.15);
-  color: #FFCC00;
+  background: rgba(255, 138, 61, 0.15);
+  color: #FF8A3D;
+  border-color: #FF8A3D;
+}
+
+.badge:hover {
+  background: rgba(255, 138, 61, 0.2);
+  border-color: #FF8A3D;
 }
 
 /* Blog post item */
@@ -435,6 +468,35 @@ body {
   color: var(--ifm-font-color-secondary);
 }
 
+/* Uniform container widths across all pages */
+.navbar .navbar__inner,
+.footer .container {
+  max-width: 1200px;
+  margin: 0 auto;
+  width: 100%;
+}
+
+/* Blog post content width */
+.theme-doc-markdown.markdown,
+article.margin-vert--lg {
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+/* Main wrapper for consistent content width */
+main .container {
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+/* Blog post page specific */
+.blog-wrapper main .container,
+.blog-list-page main .container {
+  max-width: 1200px;
+  padding-left: 1rem;
+  padding-right: 1rem;
+}
+
 /* Responsive design */
 @media (max-width: 996px) {
   .hero__title {
@@ -443,6 +505,13 @@ body {
   
   .hero__subtitle {
     font-size: 1.1rem;
+  }
+  
+  .navbar .navbar__inner,
+  .footer .container,
+  main .container {
+    padding-left: 1rem;
+    padding-right: 1rem;
   }
 }
 
@@ -464,7 +533,7 @@ body {
 /* Ensure dark navbar persists across all pages */
 html[data-theme='light'] .navbar,
 html[data-theme='dark'] .navbar {
-  background-color: #1A1A1A !important;
+  background-color: #1F1F1C !important;
 }
 
 /* Additional ClickHouse-inspired elements */
@@ -473,15 +542,10 @@ html[data-theme='dark'] .navbar {
 }
 
 [data-theme='dark'] .hero--primary {
-  background: linear-gradient(135deg, #1A1A1A 0%, #2D2D2D 100%);
+  background: linear-gradient(135deg, #1F1F1C 0%, #2A2A27 100%);
 }
 
 /* Accent for headings */
 article h2 {
-  color: #FFCC00;
-  transition: color 0.2s;
-}
-
-article h2:hover {
-  color: #FF6B00;
+  color: var(--ifm-font-color-base);
 }
