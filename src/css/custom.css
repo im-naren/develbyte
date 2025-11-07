@@ -240,47 +240,19 @@ code {
   font-weight: 600;
 }
 
-/* Code block container with header */
+/* Code block container */
 div[class*='codeBlockContainer'] {
   position: relative;
   margin: 2rem 0;
   border-radius: 8px;
   overflow: hidden;
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
-}
-
-/* Code block header bar */
-div[class*='codeBlockContainer']::before {
-  content: '';
-  display: block;
-  height: 2.5rem;
-  background: #0D0D0D;
-  border-bottom: 1px solid #2A2A27;
-  position: relative;
-}
-
-/* Language tab on header */
-pre[class*='language-']::before {
-  content: attr(data-language);
-  position: absolute;
-  top: 0;
-  left: 0;
-  background: #1F1F1C;
-  color: #CDCDC9;
-  font-size: 0.75rem;
-  font-weight: 600;
-  padding: 0.6rem 1rem;
-  height: 2.5rem;
-  display: flex;
-  align-items: center;
-  border-right: 1px solid #2A2A27;
-  z-index: 2;
-  letter-spacing: 0.3px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+  border: 1px solid #2A2A27;
 }
 
 /* Code block styling */
 .prism-code {
-  border-radius: 0 0 8px 8px;
+  border-radius: 8px;
   margin: 0 !important;
   border: none;
   background: #0D0D0D !important;
@@ -296,135 +268,43 @@ pre[class*='language-']::before {
 
 /* Docusaurus code block title (if present) */
 div[class*='codeBlockTitle'] {
-  background: #0D0D0D;
+  background: #1F1F1C;
   color: #CDCDC9;
   font-weight: 600;
   font-size: 0.75rem;
   padding: 0.6rem 1rem;
   border-bottom: 1px solid #2A2A27;
-  border-top-left-radius: 8px;
-  border-top-right-radius: 8px;
   margin: 0;
 }
 
-/* Extract language from class name */
-pre[class*='language-javascript']::before {
-  content: 'JavaScript';
-}
-
-pre[class*='language-typescript']::before {
-  content: 'TypeScript';
-}
-
-pre[class*='language-jsx']::before {
-  content: 'React JSX';
-}
-
-pre[class*='language-tsx']::before {
-  content: 'React TSX';
-}
-
-pre[class*='language-python']::before {
-  content: 'Python';
-}
-
-pre[class*='language-bash']::before,
-pre[class*='language-shell']::before {
-  content: 'Bash';
-}
-
-pre[class*='language-json']::before {
-  content: 'JSON';
-}
-
-pre[class*='language-css']::before {
-  content: 'CSS';
-}
-
-pre[class*='language-html']::before {
-  content: 'HTML';
-}
-
-pre[class*='language-yaml']::before,
-pre[class*='language-yml']::before {
-  content: 'YAML';
-}
-
-pre[class*='language-markdown']::before,
-pre[class*='language-md']::before {
-  content: 'Markdown';
-}
-
-pre[class*='language-sql']::before {
-  content: 'SQL';
-}
-
-pre[class*='language-java']::before {
-  content: 'Java';
-}
-
-pre[class*='language-go']::before {
-  content: 'Go';
-}
-
-pre[class*='language-rust']::before {
-  content: 'Rust';
-}
-
-pre[class*='language-c']::before {
-  content: 'C';
-}
-
-pre[class*='language-cpp']::before {
-  content: 'C++';
-}
-
-pre[class*='language-text']::before {
-  content: 'Text';
-}
-
-/* Dark mode support for code blocks */
-[data-theme='dark'] div[class*='codeBlockContainer']::before {
-  background: #0D0D0D;
-  border-bottom-color: #2A2A27;
-}
-
-[data-theme='dark'] pre[class*='language-']::before {
-  background: #1F1F1C;
-  color: #CDCDC9;
-  border-right-color: #2A2A27;
-}
-
+/* Dark mode code blocks */
 [data-theme='dark'] .prism-code {
   background: #0D0D0D !important;
 }
 
 [data-theme='dark'] div[class*='codeBlockTitle'] {
-  background: #0D0D0D;
+  background: #1F1F1C;
   color: #CDCDC9;
   border-bottom-color: #2A2A27;
 }
 
-/* Light mode adjustments */
-[data-theme='light'] div[class*='codeBlockContainer']::before {
-  background: #1A1A1A;
-  border-bottom-color: #2D2D2D;
+[data-theme='dark'] div[class*='codeBlockContainer'] {
+  border-color: #2A2A27;
 }
 
-[data-theme='light'] pre[class*='language-']::before {
-  background: #242421;
-  color: #E8E8E8;
-  border-right-color: #3A3A37;
-}
-
+/* Light mode code blocks */
 [data-theme='light'] .prism-code {
   background: #1A1A1A !important;
 }
 
 [data-theme='light'] div[class*='codeBlockTitle'] {
-  background: #1A1A1A;
+  background: #242421;
   color: #E8E8E8;
-  border-bottom-color: #2D2D2D;
+  border-bottom-color: #3A3A37;
+}
+
+[data-theme='light'] div[class*='codeBlockContainer'] {
+  border-color: #3A3A37;
 }
 
 /* Button styling - ClickHouse yellow buttons */
