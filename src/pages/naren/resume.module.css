@@ -209,13 +209,19 @@ html[data-theme='dark'] .achievement:hover strong {
   font-weight: 700;
   margin: 0 0 1.5rem 0;
   color: #1A1A1A;
-  border-bottom: 3px solid #FFCC00;
-  padding-bottom: 0.5rem;
+  transition: color 0.2s;
+}
+
+.sectionTitle:hover {
+  color: #FF6B00;
 }
 
 html[data-theme='dark'] .sectionTitle {
   color: #FFCC00;
-  border-bottom: 3px solid #FFCC00;
+}
+
+html[data-theme='dark'] .sectionTitle:hover {
+  color: #FF8533;
 }
 
 /* Job Styles */
@@ -532,7 +538,6 @@ html[data-theme='dark'] .skillTags span:hover {
 
   .sectionTitle {
     color: #1A1A1A;
-    border-bottom: 3px solid #FFCC00;
     -webkit-print-color-adjust: exact;
     print-color-adjust: exact;
   }

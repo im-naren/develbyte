@@ -199,13 +199,12 @@ body {
   font-size: 2.5rem;
   font-weight: 700;
   margin-bottom: 1rem;
-  color: #1A1A1A;
-  border-bottom: 3px solid #FFCC00;
-  padding-bottom: 0.75rem;
+  color: #FFCC00;
+  transition: color 0.2s;
 }
 
-[data-theme='dark'] .blog-post-page h1 {
-  color: #FFCC00;
+.blog-post-page h1:hover {
+  color: #FF6B00;
 }
 
 .blog-post-page h2 {
@@ -214,13 +213,11 @@ body {
   margin-top: 2rem;
   margin-bottom: 1rem;
   color: #FFCC00;
-  border-bottom: 2px solid #FFCC00;
-  padding-bottom: 0.5rem;
+  transition: color 0.2s;
 }
 
 .blog-post-page h2:hover {
   color: #FF6B00;
-  border-bottom-color: #FF6B00;
 }
 
 .blog-post-page h3 {
@@ -479,7 +476,7 @@ html[data-theme='dark'] .navbar {
   background: linear-gradient(135deg, #1A1A1A 0%, #2D2D2D 100%);
 }
 
-/* Accent underlines for headings */
+/* Accent for headings */
 article h2 {
   color: #FFCC00;
   transition: color 0.2s;
@@ -487,18 +484,4 @@ article h2 {
 
 article h2:hover {
   color: #FF6B00;
-}
-
-article h2::after {
-  content: '';
-  display: block;
-  width: 60px;
-  height: 3px;
-  background: #FFCC00;
-  margin-top: 0.5rem;
-  transition: background 0.2s;
-}
-
-article h2:hover::after {
-  background: #FF6B00;
 }
