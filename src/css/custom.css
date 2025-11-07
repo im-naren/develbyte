@@ -237,7 +237,6 @@ body {
 code {
   background: rgba(255, 138, 61, 0.1);
   color: #FF8A3D;
-  border: 1px solid rgba(255, 138, 61, 0.2);
   border-radius: 3px;
   padding: 0.15rem 0.4rem;
   font-size: 0.9em;
@@ -247,7 +246,6 @@ code {
 [data-theme='dark'] code {
   background: rgba(255, 138, 61, 0.15);
   color: #FF8A3D;
-  border-color: rgba(255, 138, 61, 0.3);
 }
 
 /* Code block styling */
