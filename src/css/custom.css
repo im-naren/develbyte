@@ -268,21 +268,28 @@ div[class*='codeBlockTitle'] {
   border-bottom: 1px solid rgba(255, 138, 61, 0.2);
 }
 
-/* Alternative: Language badge using data attribute */
+/* Language badge positioned above code block */
+div[class*='codeBlockContainer']::before,
 pre[class*='language-']::before {
   content: attr(data-language);
   position: absolute;
-  top: 0.5rem;
-  right: 0.75rem;
-  background: rgba(255, 138, 61, 0.9);
+  top: -1.5rem;
+  left: 0;
+  background: #FF8A3D;
   color: #1F1F1C;
-  font-size: 0.65rem;
+  font-size: 0.7rem;
   font-weight: 700;
-  padding: 0.2rem 0.5rem;
-  border-radius: 3px;
+  padding: 0.25rem 0.75rem;
+  border-radius: 4px 4px 0 0;
   text-transform: uppercase;
   letter-spacing: 0.5px;
   z-index: 1;
+}
+
+/* Add margin to code block container for language tag */
+div[class*='codeBlockContainer'] {
+  position: relative;
+  margin-top: 2rem;
 }
 
 /* Extract language from class name */
