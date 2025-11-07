@@ -240,12 +240,50 @@ code {
   font-weight: 600;
 }
 
+/* Code block container with header */
+div[class*='codeBlockContainer'] {
+  position: relative;
+  margin: 2rem 0;
+  border-radius: 8px;
+  overflow: hidden;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+}
+
+/* Code block header bar */
+div[class*='codeBlockContainer']::before {
+  content: '';
+  display: block;
+  height: 2.5rem;
+  background: #0D0D0D;
+  border-bottom: 1px solid #2A2A27;
+  position: relative;
+}
+
+/* Language tab on header */
+pre[class*='language-']::before {
+  content: attr(data-language);
+  position: absolute;
+  top: 0;
+  left: 0;
+  background: #1F1F1C;
+  color: #CDCDC9;
+  font-size: 0.75rem;
+  font-weight: 600;
+  padding: 0.6rem 1rem;
+  height: 2.5rem;
+  display: flex;
+  align-items: center;
+  border-right: 1px solid #2A2A27;
+  z-index: 2;
+  letter-spacing: 0.3px;
+}
+
 /* Code block styling */
 .prism-code {
-  border-radius: 8px;
-  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-  border: 1px solid var(--ifm-border-color);
-  position: relative;
+  border-radius: 0 0 8px 8px;
+  margin: 0 !important;
+  border: none;
+  background: #0D0D0D !important;
 }
 
 /* Don't apply inline code styles to code blocks */
@@ -256,122 +294,137 @@ code {
   color: inherit;
 }
 
-/* Language label in top-left corner */
+/* Docusaurus code block title (if present) */
 div[class*='codeBlockTitle'] {
-  background: rgba(255, 138, 61, 0.15);
-  color: #FF8A3D;
+  background: #0D0D0D;
+  color: #CDCDC9;
   font-weight: 600;
   font-size: 0.75rem;
-  padding: 0.25rem 0.75rem;
+  padding: 0.6rem 1rem;
+  border-bottom: 1px solid #2A2A27;
   border-top-left-radius: 8px;
   border-top-right-radius: 8px;
-  border-bottom: 1px solid rgba(255, 138, 61, 0.2);
-}
-
-/* Language badge positioned above code block */
-div[class*='codeBlockContainer']::before,
-pre[class*='language-']::before {
-  content: attr(data-language);
-  position: absolute;
-  top: -1.5rem;
-  left: 0;
-  background: #FF8A3D;
-  color: #1F1F1C;
-  font-size: 0.7rem;
-  font-weight: 700;
-  padding: 0.25rem 0.75rem;
-  border-radius: 4px 4px 0 0;
-  text-transform: uppercase;
-  letter-spacing: 0.5px;
-  z-index: 1;
-}
-
-/* Add margin to code block container for language tag */
-div[class*='codeBlockContainer'] {
-  position: relative;
-  margin-top: 2rem;
+  margin: 0;
 }
 
 /* Extract language from class name */
 pre[class*='language-javascript']::before {
-  content: 'js';
+  content: 'JavaScript';
 }
 
 pre[class*='language-typescript']::before {
-  content: 'ts';
+  content: 'TypeScript';
 }
 
 pre[class*='language-jsx']::before {
-  content: 'jsx';
+  content: 'React JSX';
 }
 
 pre[class*='language-tsx']::before {
-  content: 'tsx';
+  content: 'React TSX';
 }
 
 pre[class*='language-python']::before {
-  content: 'py';
+  content: 'Python';
 }
 
 pre[class*='language-bash']::before,
 pre[class*='language-shell']::before {
-  content: 'bash';
+  content: 'Bash';
 }
 
 pre[class*='language-json']::before {
-  content: 'json';
+  content: 'JSON';
 }
 
 pre[class*='language-css']::before {
-  content: 'css';
+  content: 'CSS';
 }
 
 pre[class*='language-html']::before {
-  content: 'html';
+  content: 'HTML';
 }
 
 pre[class*='language-yaml']::before,
 pre[class*='language-yml']::before {
-  content: 'yaml';
+  content: 'YAML';
 }
 
 pre[class*='language-markdown']::before,
 pre[class*='language-md']::before {
-  content: 'md';
+  content: 'Markdown';
 }
 
 pre[class*='language-sql']::before {
-  content: 'sql';
+  content: 'SQL';
 }
 
 pre[class*='language-java']::before {
-  content: 'java';
+  content: 'Java';
 }
 
 pre[class*='language-go']::before {
-  content: 'go';
+  content: 'Go';
 }
 
 pre[class*='language-rust']::before {
-  content: 'rust';
+  content: 'Rust';
 }
 
 pre[class*='language-c']::before {
-  content: 'c';
+  content: 'C';
 }
 
 pre[class*='language-cpp']::before {
-  content: 'cpp';
+  content: 'C++';
 }
 
 pre[class*='language-text']::before {
-  content: 'text';
+  content: 'Text';
 }
 
-/* Dark mode adjustments for language badge */
+/* Dark mode support for code blocks */
+[data-theme='dark'] div[class*='codeBlockContainer']::before {
+  background: #0D0D0D;
+  border-bottom-color: #2A2A27;
+}
+
 [data-theme='dark'] pre[class*='language-']::before {
-  background: #FF8A3D;
-  color: #1F1F1C;
+  background: #1F1F1C;
+  color: #CDCDC9;
+  border-right-color: #2A2A27;
+}
+
+[data-theme='dark'] .prism-code {
+  background: #0D0D0D !important;
+}
+
+[data-theme='dark'] div[class*='codeBlockTitle'] {
+  background: #0D0D0D;
+  color: #CDCDC9;
+  border-bottom-color: #2A2A27;
+}
+
+/* Light mode adjustments */
+[data-theme='light'] div[class*='codeBlockContainer']::before {
+  background: #1A1A1A;
+  border-bottom-color: #2D2D2D;
+}
+
+[data-theme='light'] pre[class*='language-']::before {
+  background: #242421;
+  color: #E8E8E8;
+  border-right-color: #3A3A37;
+}
+
+[data-theme='light'] .prism-code {
+  background: #1A1A1A !important;
+}
+
+[data-theme='light'] div[class*='codeBlockTitle'] {
+  background: #1A1A1A;
+  color: #E8E8E8;
+  border-bottom-color: #2D2D2D;
 }
 
 /* Button styling - ClickHouse yellow buttons */
