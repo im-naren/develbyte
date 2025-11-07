@@ -245,6 +245,7 @@ code {
   border-radius: 8px;
   box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
   border: 1px solid var(--ifm-border-color);
+  position: relative;
 }
 
 /* Don't apply inline code styles to code blocks */
@@ -253,6 +254,117 @@ code {
   border: none;
   padding: 0;
   color: inherit;
+}
+
+/* Language label in top-left corner */
+div[class*='codeBlockTitle'] {
+  background: rgba(255, 138, 61, 0.15);
+  color: #FF8A3D;
+  font-weight: 600;
+  font-size: 0.75rem;
+  padding: 0.25rem 0.75rem;
+  border-top-left-radius: 8px;
+  border-top-right-radius: 8px;
+  border-bottom: 1px solid rgba(255, 138, 61, 0.2);
+}
+
+/* Alternative: Language badge using data attribute */
+pre[class*='language-']::before {
+  content: attr(data-language);
+  position: absolute;
+  top: 0.5rem;
+  right: 0.75rem;
+  background: rgba(255, 138, 61, 0.9);
+  color: #1F1F1C;
+  font-size: 0.65rem;
+  font-weight: 700;
+  padding: 0.2rem 0.5rem;
+  border-radius: 3px;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  z-index: 1;
+}
+
+/* Extract language from class name */
+pre[class*='language-javascript']::before {
+  content: 'js';
+}
+
+pre[class*='language-typescript']::before {
+  content: 'ts';
+}
+
+pre[class*='language-jsx']::before {
+  content: 'jsx';
+}
+
+pre[class*='language-tsx']::before {
+  content: 'tsx';
+}
+
+pre[class*='language-python']::before {
+  content: 'py';
+}
+
+pre[class*='language-bash']::before,
+pre[class*='language-shell']::before {
+  content: 'bash';
+}
+
+pre[class*='language-json']::before {
+  content: 'json';
+}
+
+pre[class*='language-css']::before {
+  content: 'css';
+}
+
+pre[class*='language-html']::before {
+  content: 'html';
+}
+
+pre[class*='language-yaml']::before,
+pre[class*='language-yml']::before {
+  content: 'yaml';
+}
+
+pre[class*='language-markdown']::before,
+pre[class*='language-md']::before {
+  content: 'md';
+}
+
+pre[class*='language-sql']::before {
+  content: 'sql';
+}
+
+pre[class*='language-java']::before {
+  content: 'java';
+}
+
+pre[class*='language-go']::before {
+  content: 'go';
+}
+
+pre[class*='language-rust']::before {
+  content: 'rust';
+}
+
+pre[class*='language-c']::before {
+  content: 'c';
+}
+
+pre[class*='language-cpp']::before {
+  content: 'cpp';
+}
+
+pre[class*='language-text']::before {
+  content: 'text';
+}
+
+/* Dark mode adjustments for language badge */
+[data-theme='dark'] pre[class*='language-']::before {
+  background: #FF8A3D;
+  color: #1F1F1C;
 }
 
 /* Button styling - ClickHouse yellow buttons */
