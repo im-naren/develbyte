@@ -836,12 +836,17 @@ main .container:not(.blog-post-page main .container) {
 }
 
 /* Blog post page - centered with comfortable responsive width */
-.blog-wrapper main .container,
-.blog-list-page main .container {
+.blog-wrapper main .container {
   max-width: min(90%, 1500px);
   margin: 0 auto;
   padding-left: clamp(2rem, 5vw, 5rem);
   padding-right: clamp(2rem, 5vw, 5rem);
+}
+
+/* Blog list page - Remove container constraints */
+.blog-list-page-wrapper main .container {
+  max-width: 100% !important;
+  padding: 0 !important;
 }
 
 /* Blog post container - full width now handled by wrapper */

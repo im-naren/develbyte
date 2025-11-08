@@ -34,10 +34,6 @@ function BlogListPageMetadata(props: Props): JSX.Element {
 function BlogListPageContent(props: Props): JSX.Element {
   const {metadata, items} = props;
   const [selectedTag, setSelectedTag] = useState<string | null>(null);
-  
-  // Debug logging
-  console.log('BlogListPage - items count:', items.length);
-  console.log('BlogListPage - items:', items);
 
   // Filter items based on selected tag
   const filteredItems = useMemo(() => {
@@ -115,8 +111,10 @@ export default function BlogListPage(props: Props): JSX.Element {
         ThemeClassNames.page.blogListPage,
       )}>
       <BlogListPageMetadata {...props} />
-      <Layout>
-        <BlogListPageContent {...props} />
+      <Layout wrapperClassName="blog-list-page-wrapper" noFooter={false}>
+        <main>
+          <BlogListPageContent {...props} />
+        </main>
       </Layout>
     </HtmlClassNameProvider>
   );

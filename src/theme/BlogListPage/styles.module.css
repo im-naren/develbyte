@@ -1,18 +1,21 @@
 .blogListPage {
-  max-width: min(90%, 1500px);
+  max-width: min(95%, 1600px);
   margin: 0 auto;
-  padding: 3rem clamp(2rem, 5vw, 5rem);
+  padding: 2rem clamp(2rem, 5vw, 5rem);
 }
 
 .contentContainer {
   display: flex;
   gap: 2rem;
   align-items: flex-start;
+  width: 100%;
 }
 
 .mainContent {
-  flex: 1;
-  min-width: 0; /* Allows flex item to shrink below content size */
+  flex: 1 1 auto !important;
+  min-width: 0 !important; /* Allows flex item to shrink below content size */
+  max-width: calc(100% - 320px - 2rem) !important; /* Leave room for sidebar */
+  overflow: hidden !important;
 }
 
 .sidebar {
@@ -106,7 +109,7 @@
   text-decoration: none;
 }
 
-@media (max-width: 996px) {
+@media (max-width: 768px) {
   .contentContainer {
     flex-direction: column;
   }
