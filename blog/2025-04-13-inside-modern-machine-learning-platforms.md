@@ -12,6 +12,8 @@ In this post, we dive deep into how different organisations — ranging from tec
 
 <!--truncate-->
 
+![ML Platform Computation Complexity](/img/computation-complexity)
+
 We'll cover:
 
 * What a typical ML platform looks like
@@ -184,5 +186,5 @@ Have thoughts or want to share how your company does it? I'd love to hear from y
 
 ---
 
-*Originally published on [Medium](https://medium.com/develbyte/inside-modern-machine-learning-platforms-a-surveyacross-the-industry-fe2ed51e38c6)*
+*Can also read on [Medium](https://medium.com/develbyte/inside-modern-machine-learning-platforms-a-surveyacross-the-industry-fe2ed51e38c6)*
 
