@@ -2,7 +2,7 @@
 slug: introduction-to-mapreduce
 title: Introduction To MapReduce
 authors: [narendra]
-tags: []
+tags: [distributed-systems, architecture]
 date: 2015-05-14
 ---
 
