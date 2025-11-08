@@ -12,7 +12,7 @@ In this post, we dive deep into how different organisations — ranging from tec
 
 <!--truncate-->
 
-![Narendra Kumar](https://github.com/im-naren.png)
+![ML Platform Computation Complexity](/img/computation-complexity)
 
 We'll cover:
 
