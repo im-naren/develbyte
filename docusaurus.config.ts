@@ -91,6 +91,7 @@ const config: Config = {
       hideOnScroll: false,
       items: [
         {to: '/about', label: 'About', position: 'left'},
+        {to: '/resume', label: 'Resume', position: 'left'},
         {to: '/', label: 'Blog', position: 'left'},
         {
           href: 'https://github.com/im-naren',
