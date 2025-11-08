@@ -9,145 +9,137 @@ export default function About(): React.JSX.Element {
       <div className="container margin-vert--lg">
         <div className="row">
           <div className="col col--8 col--offset-2">
-            <div className="text--center margin-bottom--lg">
-              <h1 className="hero__title">About Me</h1>
-              <p className="hero__subtitle">
-                Builder of data systems and software, sharing notes on engineering, process, and career
-              </p>
-            </div>
-            
-            <div className="card margin-bottom--lg">
-              <div className="card__body">
-                <div className="row">
-                  <div className="col col--4">
-                    <div className="text--center">
-                      <div 
-                        className="avatar avatar--vertical"
-                        style={{
-                          width: '200px',
-                          height: '200px',
-                          borderRadius: '50%',
-                          background: 'linear-gradient(135deg, #2563eb, #3b82f6)',
-                          display: 'flex',
-                          alignItems: 'center',
-                          justifyContent: 'center',
-                          margin: '0 auto 1rem',
-                          fontSize: '4rem',
-                          color: 'white',
-                          fontWeight: 'bold'
-                        }}
-                      >
-                        NK
-                      </div>
-                    </div>
-                  </div>
-                  <div className="col col--8">
-                    <h2>Hello, I'm Narendra Dubey</h2>
-                    <p>
-                      I'm a builder of data systems and software, sharing notes on engineering, process, and career. 
-                      I enjoy simplifying complex problems, writing practical guides, and exploring systems that scale without drama.
-                    </p>
-                    <p>
-                      When I'm not shipping code, I'm usually reading, tinkering with data pipelines, or writing about what I learn here on Develbyte.
-                    </p>
-                  </div>
-                </div>
-              </div>
-            </div>
-
-            <div className="row">
-              <div className="col col--6">
-                <div className="card">
-                  <div className="card__header">
-                    <h3>🚀 What I Do</h3>
-                  </div>
-                  <div className="card__body">
-                    <ul>
-                      <li>Data systems and software engineering</li>
-                      <li>Building scalable data pipelines</li>
-                      <li>Simplifying complex problems</li>
-                      <li>Technical writing and practical guides</li>
-                      <li>Systems that scale without drama</li>
-                    </ul>
-                  </div>
-                </div>
-              </div>
-              
-              <div className="col col--6">
-                <div className="card">
-                  <div className="card__header">
-                    <h3>🛠️ Technologies</h3>
-                  </div>
-                  <div className="card__body">
-                    <div className="row">
-                      <div className="col col--6">
-                        <strong>Data Systems:</strong>
-                        <ul>
-                          <li>Data Pipelines</li>
-                          <li>Distributed Systems</li>
-                          <li>Cloud Infrastructure</li>
-                        </ul>
-                      </div>
-                      <div className="col col--6">
-                        <strong>Software Engineering:</strong>
-                        <ul>
-                          <li>Python & Go</li>
-                          <li>Kubernetes & Docker</li>
-                          <li>Monitoring & Observability</li>
-                        </ul>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </div>
-
-            <div className="card margin-top--lg">
-              <div className="card__header">
-                <h3>📬 Get In Touch</h3>
-              </div>
-              <div className="card__body">
-                <p>
-                  I'm always interested in connecting with fellow engineers, discussing data systems, 
-                  or sharing ideas about building scalable software and engineering processes.
-                </p>
-                <div className="row">
-                  <div className="col col--4">
+            <div style={{ maxWidth: '750px', margin: '0 auto', lineHeight: '1.8' }}>
+              <div style={{ display: 'flex', alignItems: 'center', gap: '2rem', marginBottom: '2rem', flexWrap: 'wrap' }}>
+                <img 
+                  src="https://github.com/im-naren.png" 
+                  alt="Narendra Dubey"
+                  style={{
+                    width: '200px',
+                    height: '200px',
+                    borderRadius: '50%',
+                    objectFit: 'cover',
+                    border: '3px solid rgba(255, 204, 0, 0.3)'
+                  }}
+                />
+                <div style={{ flex: 1, minWidth: '300px' }}>
+                  <h2 style={{ marginTop: '0', marginBottom: '0.5rem', fontSize: '2rem', color: '#FFCC00' }}>
+                    Narendra Dubey
+                  </h2>
+                  <p style={{ fontSize: '1.1rem', fontStyle: 'italic', color: '#B8B8B8', marginBottom: '1rem' }}>
+                    Systems builder. Platform tinkerer. Distributed architecture troublemaker.
+                  </p>
+                  <div style={{ display: 'flex', gap: '1rem', flexWrap: 'wrap' }}>
                     <a 
                       href="https://github.com/im-naren" 
-                      className="button button--primary button--block"
+                      style={{ 
+                        padding: '0.4rem 1rem',
+                        background: 'rgba(255, 204, 0, 0.1)',
+                        border: '1px solid rgba(255, 204, 0, 0.3)',
+                        borderRadius: '4px',
+                        color: '#FFCC00',
+                        textDecoration: 'none',
+                        fontSize: '0.9rem',
+                        transition: 'all 0.2s ease'
+                      }}
                       target="_blank"
                       rel="noopener noreferrer"
+                      onMouseEnter={(e) => {
+                        e.currentTarget.style.background = 'rgba(255, 204, 0, 0.2)';
+                        e.currentTarget.style.borderColor = 'rgba(255, 204, 0, 0.5)';
+                      }}
+                      onMouseLeave={(e) => {
+                        e.currentTarget.style.background = 'rgba(255, 204, 0, 0.1)';
+                        e.currentTarget.style.borderColor = 'rgba(255, 204, 0, 0.3)';
+                      }}
                     >
                       GitHub
                     </a>
-                  </div>
-                  <div className="col col--4">
                     <a 
                       href="https://linkedin.com/in/im-naren" 
-                      className="button button--primary button--block"
+                      style={{ 
+                        padding: '0.4rem 1rem',
+                        background: 'rgba(255, 204, 0, 0.1)',
+                        border: '1px solid rgba(255, 204, 0, 0.3)',
+                        borderRadius: '4px',
+                        color: '#FFCC00',
+                        textDecoration: 'none',
+                        fontSize: '0.9rem',
+                        transition: 'all 0.2s ease'
+                      }}
                       target="_blank"
                       rel="noopener noreferrer"
+                      onMouseEnter={(e) => {
+                        e.currentTarget.style.background = 'rgba(255, 204, 0, 0.2)';
+                        e.currentTarget.style.borderColor = 'rgba(255, 204, 0, 0.5)';
+                      }}
+                      onMouseLeave={(e) => {
+                        e.currentTarget.style.background = 'rgba(255, 204, 0, 0.1)';
+                        e.currentTarget.style.borderColor = 'rgba(255, 204, 0, 0.3)';
+                      }}
                     >
                       LinkedIn
                     </a>
-                  </div>
-                  <div className="col col--4">
                     <a 
                       href="mailto:naren.dubey@zoho.com" 
-                      className="button button--primary button--block"
+                      style={{ 
+                        padding: '0.4rem 1rem',
+                        background: 'rgba(255, 204, 0, 0.1)',
+                        border: '1px solid rgba(255, 204, 0, 0.3)',
+                        borderRadius: '4px',
+                        color: '#FFCC00',
+                        textDecoration: 'none',
+                        fontSize: '0.9rem',
+                        transition: 'all 0.2s ease'
+                      }}
+                      onMouseEnter={(e) => {
+                        e.currentTarget.style.background = 'rgba(255, 204, 0, 0.2)';
+                        e.currentTarget.style.borderColor = 'rgba(255, 204, 0, 0.5)';
+                      }}
+                      onMouseLeave={(e) => {
+                        e.currentTarget.style.background = 'rgba(255, 204, 0, 0.1)';
+                        e.currentTarget.style.borderColor = 'rgba(255, 204, 0, 0.3)';
+                      }}
                     >
                       Email
                     </a>
                   </div>
                 </div>
               </div>
-            </div>
-
-            <div className="text--center margin-top--lg">
-              <p className="hero__subtitle">
-                Thanks for visiting my blog! Feel free to explore my posts and don't hesitate to reach out.
+              
+              <p>
+                I specialize in building and scaling distributed systems and cloud platforms—the kind you can trust to survive odd failures, Monday morning releases, and the inevitable 2am monitoring surprise. My engineering playground is all about making complex systems robust, observable, and just a little bit elegant.
               </p>
+
+              <h3 style={{ marginTop: '2.5rem', marginBottom: '1rem' }}>What gets me out of bed (and sometimes keeps me up):</h3>
+              <ul>
+                <li>Designing fault-tolerant platforms and distributed architectures for the real world</li>
+                <li>Untangling tricky technical problems—think consensus, network partitions, state machines, and weird cloud bugs</li>
+                <li>Automating infrastructure (especially when it helps my teammates sleep at night)</li>
+                <li>Turning deep lessons from production into practical guides, docs, and diagrams</li>
+              </ul>
+
+              <h3 style={{ marginTop: '2.5rem', marginBottom: '1rem' }}>Nerdy passions:</h3>
+              <ul>
+                <li>Large-scale systems, cloud primitives, Kubernetes mysteries, and service mesh antics</li>
+                <li>Improving reliability, scalability, observability, and those subtle edge cases nobody else wants to touch</li>
+                <li>Debating CAP and PACELC tradeoffs, swapping real-world examples, and exploring open-source tools</li>
+                <li>Occasional spontaneous architecture sketches—extra points if the topology looks cool</li>
+              </ul>
+
+              <h3 style={{ marginTop: '2.5rem', marginBottom: '1rem' }}>Outside work:</h3>
+              <p>
+                I'm raising two kids, playing games with them, and sometimes pondering the existence of being itself. 
+                I love philosophy, physics, history, and anything that entertains a good "why."
+              </p>
+              <hr/>
+              <p>
+              Thanks for stopping by Develbyte!
+              <br /><br />
+              If you want to swap platform stories, sketch distributed topologies, or share battle scars from production, I’m always game. Drop me a message, ping me anytime, or just shoot me a DM—and let’s nerd out together!
+              </p>
+              
+
             </div>
           </div>
         </div>
