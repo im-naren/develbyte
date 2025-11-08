@@ -13,6 +13,16 @@
   overflow: hidden;
 }
 
+/* Link Styles - Yellow theme */
+.resumeContent a {
+  color: #FFCC00;
+  text-decoration: underline;
+}
+
+.resumeContent a:hover {
+  color: #FFD700;
+}
+
 /* Header Section - ClickHouse Theme */
 .header {
   background: linear-gradient(135deg, #1A1A1A, #2D2D2D);
@@ -88,13 +98,12 @@
 }
 
 .contactInfo a {
-  color: white;
+  color: #FFCC00;
   text-decoration: underline;
-  opacity: 0.9;
 }
 
 .contactInfo a:hover {
-  opacity: 1;
+  color: #FFD700;
 }
 
 .links {
@@ -105,13 +114,12 @@
 }
 
 .links a {
-  color: white;
+  color: #FFCC00;
   text-decoration: underline;
-  opacity: 0.9;
 }
 
 .links a:hover {
-  opacity: 1;
+  color: #FFD700;
 }
 
 .downloadSection {
@@ -173,7 +181,7 @@ html[data-theme='dark'] .achievements {
 }
 
 .achievement:hover strong {
-  color: #FF6B00;
+  color: #1A1A1A;
 }
 
 html[data-theme='dark'] .achievement {
@@ -181,11 +189,11 @@ html[data-theme='dark'] .achievement {
 }
 
 html[data-theme='dark'] .achievement strong {
-  color: #FFCC00;
+  color: #f5f5f5;
 }
 
 html[data-theme='dark'] .achievement:hover strong {
-  color: #FF8533;
+  color: #f5f5f5;
 }
 
 /* Section Styles */
