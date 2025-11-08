@@ -1,0 +1,145 @@
+.blogListPage {
+  max-width: min(90%, 1500px);
+  margin: 0 auto;
+  padding: 3rem clamp(2rem, 5vw, 5rem);
+}
+
+.contentContainer {
+  display: flex;
+  gap: 2rem;
+  align-items: flex-start;
+}
+
+.mainContent {
+  flex: 1;
+  min-width: 0; /* Allows flex item to shrink below content size */
+}
+
+.sidebar {
+  flex: 0 0 320px;
+  width: 320px;
+  background: rgba(255, 0, 0, 0.1); /* Temporary debug */
+  border: 2px solid red; /* Temporary debug */
+  min-height: 200px; /* Temporary debug */
+}
+
+.pageTitle {
+  color: #F9F9F9;
+  font-size: 2.5rem;
+  font-weight: 700;
+  margin-bottom: 2rem;
+  margin-top: 0;
+}
+
+.filterInfo {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  padding: 0.75rem 1rem;
+  background: rgba(255, 204, 0, 0.1);
+  border: 1px solid rgba(255, 204, 0, 0.3);
+  border-radius: 6px;
+  color: #E5E7EB;
+  font-size: 0.9rem;
+  margin-bottom: 1.5rem;
+}
+
+.filterInfo strong {
+  color: #FFCC00;
+}
+
+.clearFilter {
+  margin-left: auto;
+  padding: 0.25rem 0.75rem;
+  background: rgba(255, 204, 0, 0.2);
+  border: 1px solid rgba(255, 204, 0, 0.3);
+  border-radius: 4px;
+  color: #FFCC00;
+  font-size: 0.85rem;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.clearFilter:hover {
+  background: rgba(255, 204, 0, 0.3);
+  border-color: rgba(255, 204, 0, 0.5);
+}
+
+.noResults {
+  color: #9CA3AF;
+  font-size: 1rem;
+  padding: 2rem;
+  text-align: center;
+}
+
+.blogArchive {
+  margin-bottom: 3rem;
+}
+
+.postsList {
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+}
+
+.blogItem {
+  display: flex;
+  gap: 0.75rem;
+  align-items: baseline;
+  font-size: 1rem;
+  line-height: 1.6;
+}
+
+.blogDate {
+  color: #9CA3AF;
+  font-size: 0.95rem;
+  white-space: nowrap;
+  flex-shrink: 0;
+  min-width: 150px;
+}
+
+.blogLink {
+  color: #F9F9F9;
+  text-decoration: none;
+  transition: color 0.2s ease;
+}
+
+.blogLink:hover {
+  color: #FFCC00;
+  text-decoration: none;
+}
+
+@media (max-width: 996px) {
+  .contentContainer {
+    flex-direction: column;
+  }
+  
+  .sidebar {
+    flex: 1;
+    width: 100%;
+    order: -1; /* Move sidebar above content on mobile */
+  }
+}
+
+@media (max-width: 768px) {
+  .blogItem {
+    flex-direction: column;
+    gap: 0.25rem;
+  }
+  
+  .blogDate {
+    min-width: auto;
+    font-size: 0.875rem;
+  }
+  
+  .filterInfo {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 0.5rem;
+  }
+  
+  .clearFilter {
+    margin-left: 0;
+  }
+}
+
