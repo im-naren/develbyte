@@ -15,6 +15,10 @@ interface BlogTagsFilterProps {
 
 export default function BlogTagsFilter({ onTagSelect, selectedTag, items }: BlogTagsFilterProps): JSX.Element {
   const allPosts = items;
+  
+  // Debug logging
+  console.log('BlogTagsFilter - received items:', items);
+  console.log('BlogTagsFilter - items length:', items?.length);
 
   // Extract unique tags and count posts per tag
   const tagCounts = React.useMemo(() => {
