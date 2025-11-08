@@ -18,9 +18,6 @@
 .sidebar {
   flex: 0 0 320px;
   width: 320px;
-  background: rgba(255, 0, 0, 0.1); /* Temporary debug */
-  border: 2px solid red; /* Temporary debug */
-  min-height: 200px; /* Temporary debug */
 }
 
 .pageTitle {

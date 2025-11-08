@@ -48,7 +48,7 @@ function BlogListPageContent(props: Props): JSX.Element {
     <div className={styles.blogListPage}>
       <div className={styles.contentContainer}>
         <div className={styles.mainContent}>
-          <h1 className={styles.pageTitle}>Recent Posts [CUSTOM COMPONENT WORKING]</h1>
+          <h1 className={styles.pageTitle}>Recent Posts</h1>
           {selectedTag && (
             <div className={styles.filterInfo}>
               Showing posts tagged with <strong>{selectedTag}</strong>
@@ -92,9 +92,6 @@ function BlogListPageContent(props: Props): JSX.Element {
         </div>
         
         <aside className={styles.sidebar}>
-          <div style={{ color: 'white', padding: '20px' }}>
-            TEST SIDEBAR - If you see this, the sidebar div works!
-          </div>
           <BlogTagsFilter 
             selectedTag={selectedTag}
             onTagSelect={setSelectedTag}
