@@ -44,6 +44,7 @@ const config: Config = {
       {
         docs: false, // Docs disabled - using blog only
         blog: {
+          routeBasePath: '/', // Blog at root
           showReadingTime: true,
           feedOptions: {
             type: ['rss', 'atom'],
@@ -141,11 +142,11 @@ const config: Config = {
           items: [
             {
               label: 'RSS Feed',
-              to: '/blog/rss.xml',
+              to: '/rss.xml',
             },
             {
               label: 'Atom Feed',
-              to: '/blog/atom.xml',
+              to: '/atom.xml',
             },
           ],
         },
