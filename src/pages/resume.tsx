@@ -14,7 +14,7 @@ export default function Resume(): React.JSX.Element {
           <header className={styles.header}>
             <div className={styles.headerContent}>
               <div className={styles.avatarSection}>
-                <img src="https://github.com/im-naren.png" alt="Narendra Kumar" className={styles.avatar} />
+                <img src="/img/profile.png" alt="Narendra Kumar" className={styles.avatar} />
               </div>
               <div className={styles.headerInfo}>
                 <h1 className={styles.name}>Narendra Kumar</h1>
