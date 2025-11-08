@@ -1,10 +1,10 @@
 ---
 slug: why-latency-not-partitions-dictates-database-consistency
-title: Why Latency, Not Partitions, Dictates Your Database's Consistency
+title: Why Latency, Not Partitions, Dictates Your Database's Consistency [50Week50Papper]
 authors: narendra
-tags: [distributed-systems, architecture, database]
+tags: [distributed-systems, architecture, database, 50Week50Papper]
 ---
-# Why Latency, Not Partitions, Dictates Your Database’s Consistency [50Week50Papper]
+# Why Latency, Not Partitions, Dictates Your Database’s Consistency
 
 
 Confession: As someone with dyslexia, I’m definitely not a fan of long, dense academic text. Video lectures have always been my preferred way to learn. Honestly, reading research papers is something I’ve dodged for years—too much jargon, too many walls of text, and not enough clarity. But that’s exactly why I’m giving myself this challenge 50Week50Papper: I want to see how far I can go if I really stick with it, and whether pushing through helps me learn things that actually last.
