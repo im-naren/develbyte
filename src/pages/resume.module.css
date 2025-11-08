@@ -262,19 +262,10 @@ html[data-theme='dark'] .sectionTitle:hover {
   font-weight: 600;
   margin: 0 0 0.5rem 0;
   color: #1A1A1A;
-  transition: color 0.2s;
-}
-
-.jobSection h4:hover {
-  color: #FF6B00;
 }
 
 html[data-theme='dark'] .jobSection h4 {
-  color: #FFCC00;
-}
-
-html[data-theme='dark'] .jobSection h4:hover {
-  color: #FF8533;
+  color: #f5f5f5;
 }
 
 .jobSection ul {
@@ -373,19 +364,10 @@ html[data-theme='dark'] .jobSection h4:hover {
   font-weight: 600;
   margin: 0 0 1rem 0;
   color: #1A1A1A;
-  transition: color 0.2s;
-}
-
-.skillCategory h3:hover {
-  color: #FF6B00;
 }
 
 html[data-theme='dark'] .skillCategory h3 {
-  color: #FFCC00;
-}
-
-html[data-theme='dark'] .skillCategory h3:hover {
-  color: #FF8533;
+  color: #f5f5f5;
 }
 
 .skillTags {
