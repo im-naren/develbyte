@@ -946,7 +946,7 @@ article[class*="blogPostContainer"] {
 .col.col--7,
 .col.col--9 {
   flex: 1 1 auto;
-  max-width: 700px !important;
+  max-width: 850px !important;
   min-width: 0;
   margin-left: 0 !important; /* Remove any offset */
 }
@@ -954,7 +954,7 @@ article[class*="blogPostContainer"] {
 /* Blog post page main content */
 .blog-post-page main.col {
   flex: 1 1 auto;
-  max-width: 700px !important;
+  max-width: 850px !important;
   min-width: 0;
   margin-left: 0 !important;
 }
@@ -1020,7 +1020,7 @@ div[class*="blogPostPageSidebar"],
   .col.col--7,
   .col.col--9,
   .blog-post-page main.col {
-    max-width: 600px !important;
+    max-width: 700px !important;
   }
   
   .col.col--2,
@@ -1038,7 +1038,7 @@ div[class*="blogPostPageSidebar"],
   .col.col--7,
   .col.col--9,
   .blog-post-page main.col {
-    max-width: 500px !important;
+    max-width: 600px !important;
   }
   
   /* Make TOC slightly smaller */
@@ -1081,7 +1081,7 @@ div[class*="blogPostPageSidebar"],
   .col.col--7,
   .col.col--9,
   .blog-post-page main.col {
-    max-width: 450px !important;
+    max-width: 550px !important;
   }
   
   .col.col--2,
