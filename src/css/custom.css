@@ -849,6 +849,23 @@ main .container:not(.blog-post-page main .container) {
   padding: 0 !important;
 }
 
+/* Table header styling */
+article table thead th {
+  background: rgba(255, 204, 0, 0.2);
+  color: #FFCC00;
+  font-weight: 700;
+  border-bottom: 2px solid rgba(255, 204, 0, 0.5);
+  padding: 0.75rem 1rem;
+}
+
+article table tbody tr {
+  border-bottom: 1px solid rgba(80, 80, 80, 0.3);
+}
+
+article table tbody td {
+  padding: 0.75rem 1rem;
+}
+
 /* Blog post container - full width now handled by wrapper */
 .theme-blog-post-page {
   max-width: 100%;
