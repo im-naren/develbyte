@@ -42,28 +42,26 @@ const config: Config = {
     [
       'classic',
       {
-        docs: {
-          sidebarPath: './sidebars.ts',
-          // Please change this to your repo.
-          // Remove this to remove the "edit this page" links.
-          editUrl:
-            'https://github.com/facebook/docusaurus/tree/main/packages/create-docusaurus/templates/shared/',
-        },
+        docs: false, // Docs disabled - using blog only
         blog: {
           showReadingTime: true,
           feedOptions: {
             type: ['rss', 'atom'],
             xslt: true,
           },
+          routeBasePath: '/', // Make blog the homepage
           authorsMapPath: 'authors.yml',
-          // Please change this to your repo.
-          // Remove this to remove the "edit this page" links.
-          editUrl:
-            'https://github.com/facebook/docusaurus/tree/main/packages/create-docusaurus/templates/shared/',
           // Useful options to enforce blogging best practices
           onInlineTags: 'warn',
           onInlineAuthors: 'warn',
           onUntruncatedBlogPosts: 'warn',
+          // Disable blog sidebar (Recent Posts on left)
+          blogSidebarCount: 0,
+          // Add custom admonition for TLDR
+          admonitions: {
+            keywords: ['tldr'],
+            extendDefaults: true,
+          },
         },
         theme: {
           customCss: './src/css/custom.css',
@@ -76,18 +74,24 @@ const config: Config = {
     // Replace with your project's social card
     image: 'static/img/logo.svg',
     colorMode: {
-      respectPrefersColorScheme: true,
+      defaultMode: 'dark',
+      disableSwitch: true,
+      respectPrefersColorScheme: false,
+    },
+    markdown: {
+      mermaid: true,
     },
     navbar: {
       title: '',
       logo: {
         alt: 'Develbyte Logo',
         src: 'data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMTAwIiBoZWlnaHQ9IjQwIiB2aWV3Qm94PSIwIDAgMTAwIDQwIiBmaWxsPSJub25lIiB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciPgo8cmVjdCB3aWR0aD0iMTAwIiBoZWlnaHQ9IjQwIiByeD0iNCIgZmlsbD0iI0ZGQ0MwMCIvPgo8dGV4dCB4PSI1MCIgeT0iMjUiIGZvbnQtZmFtaWx5PSJBcmlhbCwgc2Fucy1zZXJpZiIgZm9udC1zaXplPSIxNCIgZm9udC13ZWlnaHQ9IjkwMCIgZmlsbD0iIzFBMUExQSIgdGV4dC1hbmNob3I9Im1pZGRsZSI+REVWRUxCWVRFPC90ZXh0Pgo8L3N2Zz4=',
+        href: '/',
       },
       hideOnScroll: false,
       items: [
         {to: '/about', label: 'About', position: 'left'},
-        {to: '/blog', label: 'Blog', position: 'left'},
+        {to: '/', label: 'Blog', position: 'left'},
         {
           href: 'https://github.com/im-naren',
           label: 'GitHub',
@@ -112,7 +116,7 @@ const config: Config = {
             },
             {
               label: 'Blog',
-              to: '/blog',
+              to: '/',
             },
           ],
         },
@@ -138,11 +142,11 @@ const config: Config = {
           items: [
             {
               label: 'RSS Feed',
-              to: '/blog/rss.xml',
+              to: '/rss.xml',
             },
             {
               label: 'Atom Feed',
-              to: '/blog/atom.xml',
+              to: '/atom.xml',
             },
           ],
         },
@@ -152,6 +156,14 @@ const config: Config = {
     prism: {
       theme: prismThemes.github,
       darkTheme: prismThemes.dracula,
+      additionalLanguages: ['java', 'python', 'bash', 'json', 'sql'],
+      magicComments: [
+        {
+          className: 'theme-code-block-highlighted-line',
+          line: 'highlight-next-line',
+          block: { start: 'highlight-start', end: 'highlight-end' },
+        },
+      ],
     },
   } satisfies Preset.ThemeConfig,
 };

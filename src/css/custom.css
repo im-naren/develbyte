@@ -89,9 +89,9 @@
   --ifm-background-color: #1F1F1C;
   --ifm-background-surface-color: #242421;
   
-  /* Text colors - ClickHouse grays */
-  --ifm-font-color-base: #CDCDC9;
-  --ifm-font-color-secondary: #9B9B94;
+  /* Text colors - Brighter white for better readability */
+  --ifm-font-color-base: #F9F9F9;
+  --ifm-font-color-secondary: #B8B8B8;
   
   /* Border colors */
   --ifm-border-color: #242421;
@@ -191,14 +191,16 @@ body {
   color: #FFFF66 !important;
 }
 
-/* Blog styling */
+/* Blog styling - Full width */
 .blog-wrapper {
-  max-width: 1200px;
-  margin: 0 auto;
+  max-width: 100%;
+  margin: 0;
+  width: 100%;
 }
 
 .blog-post-page {
   padding: 2rem 0;
+  width: 100%;
 }
 
 .blog-post-page .markdown {
@@ -233,6 +235,18 @@ body {
   color: #1A1A1A;
 }
 
+/* Blog post page wrapper - full width */
+div[class*="blogPostPageWrapper"],
+div[class*="blog-wrapper"] {
+  max-width: 100%;
+  width: 100%;
+}
+
+/* Ensure article takes full width */
+article[class*="blogPost"] {
+  max-width: 100%;
+}
+
 /* Inline code styling - ClickHouse orange */
 code {
   color: #FF8A3D;
@@ -240,26 +254,26 @@ code {
   font-weight: 600;
 }
 
-/* Code block container */
+/* Code block container - Dracula Theme */
 div[class*='codeBlockContainer'] {
   position: relative;
   margin: 2rem 0;
-  border-radius: 12px;
+  border-radius: 8px;
   overflow: hidden;
-  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.3), 0 2px 8px rgba(0, 0, 0, 0.2);
-  border: 1px solid rgba(255, 204, 0, 0.15);
-  background: linear-gradient(135deg, #1a1a1a 0%, #0f0f0f 100%);
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.4);
+  border: none;
+  background: #282a36;
 }
 
-/* Code block styling */
+/* Code block styling - Clean and minimal */
 .prism-code {
-  border-radius: 12px;
+  border-radius: 8px;
   margin: 0 !important;
   border: none;
   background: transparent !important;
-  padding: 1.5rem !important;
-  font-size: 0.95rem;
-  line-height: 1.7;
+  padding: 0 !important;
+  font-size: 14px;
+  line-height: 1.6;
 }
 
 /* Don't apply inline code styles to code blocks */
@@ -268,46 +282,102 @@ div[class*='codeBlockContainer'] {
   border: none;
   padding: 0;
   color: inherit;
-  font-family: 'SF Mono', 'Monaco', 'Inconsolata', 'Fira Code', 'Droid Sans Mono', monospace;
+  font-family: 'Menlo', 'Monaco', 'Consolas', 'Courier New', monospace;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
 }
 
-/* Docusaurus code block title (if present) */
+/* Docusaurus code block title - Dracula Theme */
 div[class*='codeBlockTitle'] {
-  background: linear-gradient(135deg, #2a2a27 0%, #1f1f1c 100%);
-  color: #FFCC00;
-  font-weight: 600;
-  font-size: 0.8rem;
-  padding: 0.75rem 1.25rem;
-  border-bottom: 2px solid rgba(255, 204, 0, 0.2);
+  background: #21222c;
+  color: #f8f8f2;
+  font-weight: 500;
+  font-size: 13px;
+  padding: 0.6rem 1.25rem;
+  border-bottom: none;
   margin: 0;
-  letter-spacing: 0.5px;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', sans-serif;
 }
 
-/* Copy button styling */
+/* Copy button styling - Dracula Theme */
 div[class*='codeBlockContainer'] button[class*='copyButton'] {
-  background: rgba(255, 204, 0, 0.1);
-  border: 1px solid rgba(255, 204, 0, 0.3);
-  color: #FFCC00;
-  border-radius: 6px;
+  background: #44475a;
+  border: none;
+  color: #f8f8f2;
+  border-radius: 4px;
   transition: all 0.2s ease;
+  opacity: 0.7;
 }
 
 div[class*='codeBlockContainer'] button[class*='copyButton']:hover {
-  background: rgba(255, 204, 0, 0.2);
-  border-color: #FFCC00;
-  transform: translateY(-1px);
+  background: #6272a4;
+  border: none;
+  color: #f8f8f2;
+  opacity: 1;
+  transform: scale(1.05);
 }
 
-/* Line numbers styling */
+/* IDE-style line numbers - Dracula Theme */
 .prism-code .token-line::before {
-  color: rgba(205, 205, 201, 0.4);
+  color: #6272a4;
 }
 
-/* Dark mode code blocks */
+/* Enhanced line numbers styling */
+.theme-code-block .prism-code {
+  counter-reset: line-number;
+  font-family: 'Menlo', 'Monaco', 'Courier New', monospace;
+  font-size: 14px;
+  line-height: 1.6;
+  color: #f8f8f2;
+}
+
+/* Line number container - clean, no borders */
+span[class*='codeLineNumber'] {
+  display: inline-block;
+  width: 2.5rem;
+  text-align: right;
+  margin-right: 1.5rem;
+  padding-right: 0.5rem;
+  margin-left: 1rem;
+  color: #6272a4;
+  user-select: none;
+  font-variant-numeric: tabular-nums;
+  font-weight: 400;
+}
+
+/* Add minimal padding to code lines */
+.prism-code .token-line {
+  padding: 0.125rem 1rem 0.125rem 0;
+}
+
+/* Light mode line numbers */
+[data-theme='light'] span[class*='codeLineNumber'] {
+  color: rgba(98, 114, 164, 0.7);
+}
+
+/* Hover effect on code lines - Dracula selection */
+.prism-code .token-line:hover {
+  background: #44475a;
+}
+
+[data-theme='light'] .prism-code .token-line:hover {
+  background: rgba(68, 71, 90, 0.1);
+}
+
+/* Highlighted lines - Dracula purple accent */
+.theme-code-block-highlighted-line {
+  background: rgba(189, 147, 249, 0.15);
+  display: block;
+  margin: 0 -1.5rem;
+  padding: 0 1.5rem;
+  border-left: 3px solid #bd93f9;
+}
+
+/* Dark mode code blocks - VS Code dark theme */
 [data-theme='dark'] div[class*='codeBlockContainer'] {
-  background: linear-gradient(135deg, #1a1a1a 0%, #0f0f0f 100%);
-  border-color: rgba(255, 204, 0, 0.15);
-  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.4), 0 2px 8px rgba(0, 0, 0, 0.3);
+  background: #1e1e1e;
+  border-color: rgba(255, 255, 255, 0.08);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
 }
 
 [data-theme='dark'] .prism-code {
@@ -315,16 +385,16 @@ div[class*='codeBlockContainer'] button[class*='copyButton']:hover {
 }
 
 [data-theme='dark'] div[class*='codeBlockTitle'] {
-  background: linear-gradient(135deg, #2a2a27 0%, #1f1f1c 100%);
-  color: #FFCC00;
-  border-bottom-color: rgba(255, 204, 0, 0.2);
+  background: #252526;
+  color: rgba(255, 255, 255, 0.8);
+  border-bottom-color: rgba(255, 255, 255, 0.08);
 }
 
-/* Light mode code blocks */
+/* Light mode code blocks - VS Code light theme */
 [data-theme='light'] div[class*='codeBlockContainer'] {
-  background: linear-gradient(135deg, #2a2a2a 0%, #1f1f1f 100%);
-  border-color: rgba(255, 204, 0, 0.2);
-  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.15), 0 2px 8px rgba(0, 0, 0, 0.1);
+  background: #f5f5f5;
+  border-color: rgba(0, 0, 0, 0.08);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
 }
 
 [data-theme='light'] .prism-code {
@@ -332,9 +402,9 @@ div[class*='codeBlockContainer'] button[class*='copyButton']:hover {
 }
 
 [data-theme='light'] div[class*='codeBlockTitle'] {
-  background: linear-gradient(135deg, #3a3a37 0%, #2f2f2c 100%);
-  color: #FFCC00;
-  border-bottom-color: rgba(255, 204, 0, 0.25);
+  background: #e8e8e8;
+  color: rgba(0, 0, 0, 0.8);
+  border-bottom-color: rgba(0, 0, 0, 0.1);
 }
 
 /* Button styling - ClickHouse yellow buttons */
@@ -396,18 +466,105 @@ div[class*='codeBlockContainer'] button[class*='copyButton']:hover {
   font-weight: 700;
 }
 
-/* Table of contents */
+/* TOC heading - ClickHouse style with gray theme */
+.table-of-contents::before {
+  content: "TLDR;";
+  display: block;
+  color: #FFFF66;
+  font-weight: 700;
+  font-size: 0.875rem;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  margin-bottom: 1rem;
+  padding-bottom: 0.75rem;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+/* Enhanced TOC styling - ClickHouse gray theme */
+.table-of-contents {
+  padding: 0;
+  background: transparent;
+  border-radius: 0;
+  border: none;
+  font-size: 0.9rem;
+}
+
 .table-of-contents__link {
-  color: var(--ifm-font-color-secondary);
+  color: #9CA3AF;
+  padding: 0.4rem 0;
+  display: block;
+  transition: all 0.15s ease;
+  border-left: 0;
+  margin-left: 0;
+  font-size: 0.875rem;
+  font-weight: 400;
 }
 
 .table-of-contents__link:hover {
-  color: #FF8A3D;
+  color: #E5E7EB;
+  border-left-color: transparent;
+  transform: none;
+  text-decoration: none;
 }
 
 .table-of-contents__link--active {
+  border-left-color: transparent;
+  background: transparent;
   color: #FFFF66;
   font-weight: 600;
+}
+
+/* Recent Posts Section at Bottom */
+.recent-posts-bottom {
+  margin-top: 4rem;
+  padding-top: 3rem;
+  border-top: 2px solid var(--ifm-border-color);
+}
+
+.recent-posts-bottom h2 {
+  font-size: 1.5rem;
+  font-weight: 700;
+  margin-bottom: 1.5rem;
+  color: var(--ifm-font-color-base);
+}
+
+.recent-posts-list {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+  gap: 1.5rem;
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.recent-post-item {
+  padding: 1.5rem;
+  background: var(--ifm-card-background-color);
+  border: 1px solid var(--ifm-border-color);
+  border-radius: 8px;
+  transition: all 0.3s ease;
+}
+
+.recent-post-item:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 8px 16px rgba(255, 255, 102, 0.2);
+  border-color: #FFFF66;
+}
+
+.recent-post-item a {
+  text-decoration: none;
+  color: var(--ifm-font-color-base);
+  font-weight: 600;
+}
+
+.recent-post-item a:hover {
+  color: #FFFF66;
+}
+
+.recent-post-date {
+  font-size: 0.85rem;
+  color: var(--ifm-font-color-secondary);
+  margin-top: 0.5rem;
 }
 
 /* Pagination */
@@ -452,6 +609,39 @@ div[class*='codeBlockContainer'] button[class*='copyButton']:hover {
 
 .admonition-note {
   border-left-color: #FFFF66;
+}
+
+/* TLDR Admonition - ClickHouse style with gray background */
+.admonition-tldr {
+  background: rgba(55, 55, 55, 0.5);
+  border: none;
+  border-left: 3px solid #FFFF66;
+  padding: 1.25rem 1.5rem;
+  margin: 2rem 0;
+  border-radius: 4px;
+}
+
+[data-theme='dark'] .admonition-tldr {
+  background: rgba(55, 55, 55, 0.5);
+}
+
+.admonition-tldr .admonition-heading {
+  color: #FFFF66;
+  font-weight: 700;
+  font-size: 0.875rem;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  margin-bottom: 0.75rem;
+}
+
+.admonition-tldr .admonition-content {
+  color: #D1D5DB;
+  line-height: 1.6;
+  font-size: 0.9375rem;
+}
+
+.admonition-tldr .admonition-content p {
+  color: #D1D5DB;
 }
 
 /* Search bar */
@@ -531,74 +721,405 @@ div[class*='codeBlockContainer'] button[class*='copyButton']:hover {
   border-color: #FF8A3D;
 }
 
-/* Blog post item */
+/* Compact author layout - ClickHouse style */
+.avatar {
+  display: inline-flex;
+  align-items: center;
+  gap: 1rem;
+  margin-bottom: 1.5rem;
+}
+
+.avatar__photo {
+  width: 40px;
+  height: 40px;
+}
+
+.avatar__intro {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  flex-wrap: wrap;
+}
+
 .avatar__name {
+  margin: 0;
+  font-size: 0.95rem;
   color: var(--ifm-font-color-base);
+  font-weight: 600;
 }
 
 .avatar__subtitle {
+  display: none; /* Hide subtitle for compact layout */
+}
+
+/* Compact date and reading time */
+.blog-post-page time,
+.theme-blog-post-read-time {
+  font-size: 0.9rem;
   color: var(--ifm-font-color-secondary);
 }
 
-/* Uniform container widths across all pages */
+/* Put date and reading time on same line */
+.margin-top--sm {
+  display: inline-flex;
+  gap: 1rem;
+  margin-top: 0 !important;
+  align-items: center;
+}
+
+/* Blog post header spacing */
+header.blog-post-header {
+  margin-bottom: 2rem;
+}
+
+/* Blog post title styling */
+header.blog-post-header h1 {
+  font-size: 2.5rem;
+  font-weight: 700;
+  line-height: 1.2;
+  margin-bottom: 1.5rem;
+  color: var(--ifm-font-color-base);
+}
+
+/* Blog post content spacing */
+.blog-post-page .markdown {
+  margin-top: 2rem;
+}
+
+/* Better paragraph spacing */
+.markdown p {
+  margin-bottom: 1.25rem;
+  line-height: 1.8;
+}
+
+.blog-post-page .markdown p {
+  margin-bottom: 1.25rem;
+  line-height: 1.8;
+}
+
+/* Uniform container widths across all pages - responsive */
+/* Keep navbar and footer slightly wider than blog body */
 .navbar .navbar__inner,
 .footer .container {
-  max-width: 1200px;
+  max-width: min(90%, 1520px);
   margin: 0 auto;
+  width: 100%;
+  padding-left: clamp(2rem, 5vw, 5rem);
+  padding-right: clamp(2rem, 5vw, 5rem);
+}
+
+/* Ensure navbar and footer are not affected by blog layout */
+.navbar,
+.footer {
   width: 100%;
 }
 
-/* Blog post content width */
+/* Full-width blog post layout - ClickHouse style */
 .theme-doc-markdown.markdown,
 article.margin-vert--lg {
-  max-width: 800px;
-  margin: 0 auto;
+  max-width: 100%;
+  margin: 0;
 }
 
-/* Main wrapper for consistent content width */
-main .container {
-  max-width: 1200px;
+/* Main wrapper - only apply to non-blog pages */
+main .container:not(.blog-post-page main .container) {
+  max-width: min(85%, 1400px);
   margin: 0 auto;
+  padding-left: clamp(2rem, 5vw, 5rem);
+  padding-right: clamp(2rem, 5vw, 5rem);
 }
 
-/* Blog post page specific */
+/* Blog post page - centered with comfortable responsive width */
 .blog-wrapper main .container,
 .blog-list-page main .container {
-  max-width: 1200px;
-  padding-left: 1rem;
-  padding-right: 1rem;
+  max-width: min(90%, 1500px);
+  margin: 0 auto;
+  padding-left: clamp(2rem, 5vw, 5rem);
+  padding-right: clamp(2rem, 5vw, 5rem);
+}
+
+/* Blog post container - full width now handled by wrapper */
+.theme-blog-post-page {
+  max-width: 100%;
+  margin: 0;
+}
+
+/* Blog post item - responsive */
+article[class*="blogPostContainer"] {
+  max-width: 100%;
+}
+
+/* Markdown content in blog posts */
+.markdown.theme-doc-markdown {
+  max-width: 100%;
+}
+
+/* Blog post main container - 3 column grid layout */
+.theme-blog-post-page main .container {
+  max-width: min(90%, 1500px);
+  margin: 0 auto;
+  padding-left: clamp(2rem, 5vw, 5rem);
+  padding-right: clamp(2rem, 5vw, 5rem);
+  display: grid;
+  grid-template-columns: 100px 1fr;
+  gap: 2rem;
+  align-items: start;
+}
+
+/* Position back button in left column - target the article element */
+.theme-blog-post-page article {
+  display: grid;
+  grid-template-columns: subgrid;
+  grid-column: 1 / -1;
+  gap: 2rem;
+}
+
+/* Back button stays in first column */
+.theme-blog-post-page article > div:first-child {
+  grid-column: 1;
+  position: sticky;
+  top: calc(var(--ifm-navbar-height) + 2rem);
+  height: fit-content;
+}
+
+/* Content row spans from second column */
+.theme-blog-post-page main .container > .row {
+  grid-column: 2;
+}
+
+/* Two-column layout for blog posts with TOC */
+.theme-doc-markdown.markdown > .row,
+.row.blog-post-page-wrapper,
+.container > .row {
+  display: flex !important;
+  gap: 1rem;
+  max-width: 100%;
+  margin: 0 auto;
+  align-items: flex-start;
+  flex-wrap: nowrap;
+  justify-content: center;
+}
+
+/* Force blog post pages to use flexbox side-by-side layout */
+.blog-post-page .container > .row,
+.theme-blog-post-page .container > .row {
+  display: flex !important;
+  flex-direction: row !important;
+  align-items: flex-start !important;
+  gap: 1rem;
+  justify-content: center;
+  margin: 0 auto;
+}
+
+/* Main content area - comfortable reading width, responsive */
+/* Increase content max-width slightly */
+.col.col--8,
+.col--8,
+.col.col--7,
+.col.col--9 {
+  flex: 1 1 auto;
+  max-width: 700px !important;
+  min-width: 0;
+  margin-left: 0 !important; /* Remove any offset */
+}
+
+/* Blog post page main content */
+.blog-post-page main.col {
+  flex: 1 1 auto;
+  max-width: 700px !important;
+  min-width: 0;
+  margin-left: 0 !important;
+}
+
+/* Remove offset classes that add extra margin */
+.col--offset-1,
+.col--offset-2,
+.col--offset-3 {
+  margin-left: 0 !important;
+}
+
+/* TOC sidebar - responsive width on right (wider for better readability) */
+.col.col--2,
+.col--2,
+.col.col--3 {
+  flex: 0 0 320px;
+  width: 320px;
+  min-width: 280px;
+  position: sticky;
+  top: calc(var(--ifm-navbar-height) + 2rem);
+  align-self: flex-start;
+  max-height: calc(100vh - var(--ifm-navbar-height) - 4rem);
+  overflow-y: auto;
+  margin-left: 0;
+  background: rgba(55, 55, 55, 0.4);
+  border-radius: 4px;
+  padding: 1.5rem;
+  border: 1px solid rgba(255, 255, 255, 0.05);
+}
+
+/* Adjust layout when sidebar is hidden */
+.theme-blog-post-page .row {
+  display: flex;
+  justify-content: flex-start;
+  align-items: flex-start;
+  gap: 1rem;
+}
+
+/* Remove default Docusaurus container constraints - make responsive */
+.container {
+  max-width: min(85%, 1400px);
+  margin: 0 auto;
+}
+
+/* Hide blog sidebar (Recent Posts) from left side */
+.blog-sidebar-desktop,
+aside[class*="sidebar"],
+aside.theme-blog-sidebar {
+  display: none !important;
+}
+
+/* Also hide the recent posts section on blog post pages */
+div[class*="blogPostPageSidebar"],
+.theme-doc-sidebar-container {
+  display: none !important;
 }
 
 /* Responsive design */
+@media (max-width: 1400px) {
+  /* Adjust for 3-column layout */
+  .col.col--8,
+  .col--8,
+  .col.col--7,
+  .col.col--9,
+  .blog-post-page main.col {
+    max-width: 600px !important;
+  }
+  
+  .col.col--2,
+  .col--2,
+  .col.col--3 {
+    flex: 0 0 280px;
+    width: 280px;
+  }
+}
+
+@media (max-width: 1200px) {
+  /* Further squeeze content to maintain side-by-side layout */
+  .col.col--8,
+  .col--8,
+  .col.col--7,
+  .col.col--9,
+  .blog-post-page main.col {
+    max-width: 500px !important;
+  }
+  
+  /* Make TOC slightly smaller */
+  .col.col--2,
+  .col--2,
+  .col.col--3 {
+    flex: 0 0 260px;
+    width: 260px;
+    min-width: 240px;
+  }
+}
+
 @media (max-width: 996px) {
   .hero__title {
-    font-size: 2.5rem;
+    font-size: clamp(2rem, 5vw, 2.5rem);
   }
   
   .hero__subtitle {
-    font-size: 1.1rem;
+    font-size: clamp(1rem, 2.5vw, 1.1rem);
   }
   
+  /* Stack left nav on tablets */
+  .theme-blog-post-page main .container {
+    grid-template-columns: 1fr;
+    gap: 1rem;
+  }
+  
+  .back-button-column {
+    position: static;
+    padding-bottom: 1rem;
+  }
+  
+  .theme-blog-post-page main .container > .row {
+    grid-column: 1;
+  }
+  
+  /* Keep article + TOC side by side on tablets */
+  .col.col--8,
+  .col--8,
+  .col.col--7,
+  .col.col--9,
+  .blog-post-page main.col {
+    max-width: 450px !important;
+  }
+  
+  .col.col--2,
+  .col--2,
+  .col.col--3 {
+    flex: 0 0 220px;
+    width: 220px;
+    min-width: 200px;
+  }
+}
+
+@media (max-width: 768px) {
+  /* Only stack on mobile devices */
+  .theme-doc-markdown.markdown > .row,
+  .row.blog-post-page-wrapper,
+  .container > .row,
+  .blog-post-page .container > .row {
+    flex-direction: column !important;
+  }
+  
+  .col.col--2,
+  .col--2,
+  .col.col--3 {
+    position: static;
+    flex: 1 1 100%;
+    max-height: none;
+    order: 2;
+    margin-left: 0;
+  }
+  
+  .col.col--8,
+  .col--8,
+  .col.col--7,
+  .col.col--9,
+  .blog-post-page main.col {
+    flex: 1 1 100%;
+    max-width: 100%;
+  }
+  
+  .blog-wrapper {
+    max-width: 100%;
+    padding: 0;
+    margin: 0;
+  }
+  
+  .blog-post-page h1 {
+    font-size: clamp(1.75rem, 6vw, 2rem);
+  }
+  
+  .blog-post-page h2 {
+    font-size: clamp(1.35rem, 4.5vw, 1.5rem);
+  }
+  
+  .blog-post-page h3 {
+    font-size: clamp(1.15rem, 3.5vw, 1.25rem);
+  }
+}
+
+
+@media (max-width: 480px) {
+  /* Extra small screens - ensure comfortable margins */
   .navbar .navbar__inner,
   .footer .container,
   main .container {
     padding-left: 1rem;
     padding-right: 1rem;
-  }
-}
-
-@media (max-width: 768px) {
-  .blog-wrapper {
-    max-width: 95%;
-    padding: 0 1rem;
-  }
-  
-  .blog-post-page h1 {
-    font-size: 2rem;
-  }
-  
-  .blog-post-page h2 {
-    font-size: 1.5rem;
   }
 }
 

@@ -1,41 +1,40 @@
-# Website
+# Develbyte
 
-This website is built using [Docusaurus](https://docusaurus.io/), a modern static website generator.
-
-## Installation
-
-```bash
-yarn
-```
+Personal blog and knowledge base built with [Docusaurus](https://docusaurus.io/).
 
 ## Local Development
 
 ```bash
-yarn start
+npm install
+npm start
 ```
 
-This command starts a local development server and opens up a browser window. Most changes are reflected live without having to restart the server.
+This command starts a local development server and opens up a browser window at http://localhost:3000. Most changes are reflected live without having to restart the server.
 
 ## Build
 
 ```bash
-yarn build
+npm run build
 ```
 
-This command generates static content into the `build` directory and can be served using any static contents hosting service.
+This command generates static content into the `build` directory.
 
 ## Deployment
 
-Using SSH:
+This site uses GitHub Actions for automated deployment to GitHub Pages. Simply push to the `main` branch and the site will automatically build and deploy.
+
+The workflow is defined in `.github/workflows/deploy.yml`.
+
+## Makefile Commands
+
+For convenience, you can use the Makefile:
 
 ```bash
-USE_SSH=true yarn deploy
+make start    # Start development server
+make stop     # Stop development server
+make restart  # Restart server
+make build    # Build production site
+make serve    # Serve production build locally
+make clean    # Clean build artifacts
+make status   # Check server status
 ```
-
-Not using SSH:
-
-```bash
-GIT_USER=<Your GitHub username> yarn deploy
-```
-
-If you are using GitHub pages for hosting, this command is a convenient way to build the website and push to the `gh-pages` branch.

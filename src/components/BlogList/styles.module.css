@@ -47,7 +47,7 @@
 
 .blogDate {
   font-size: 1rem;
-  color: var(--ifm-color-content);
+  color: #FFFF66;
   margin-right: 1rem;
   min-width: 120px;
   font-weight: 400;
@@ -55,16 +55,16 @@
 
 .blogLink {
   font-size: 1rem;
-  color: var(--ifm-color-content);
+  color: var(--ifm-font-color-base);
   text-decoration: underline;
-  text-decoration-color: var(--ifm-color-content);
+  text-decoration-color: var(--ifm-font-color-base);
   text-underline-offset: 2px;
   transition: text-decoration-color 0.2s ease;
 }
 
 .blogLink:hover {
-  text-decoration-color: var(--ifm-color-primary);
-  color: var(--ifm-color-content);
+  text-decoration-color: #FFFF66;
+  color: var(--ifm-font-color-base);
 }
 
 /* Empty State */
@@ -127,12 +127,18 @@
 
 /* Dark mode adjustments */
 [data-theme='dark'] .siteTitle,
-[data-theme='dark'] .yearTitle,
-[data-theme='dark'] .blogDate,
-[data-theme='dark'] .blogLink {
+[data-theme='dark'] .yearTitle {
   color: var(--ifm-color-content);
 }
 
+[data-theme='dark'] .blogDate {
+  color: #FFFF66;
+}
+
+[data-theme='dark'] .blogLink {
+  color: var(--ifm-font-color-base);
+}
+
 [data-theme='dark'] .blogLink:hover {
-  color: var(--ifm-color-content);
+  color: var(--ifm-font-color-base);
 }
