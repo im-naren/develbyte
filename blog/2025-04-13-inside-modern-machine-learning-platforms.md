@@ -160,6 +160,16 @@ If you don't want to go with self-managed OSS platform but still want OSS stack,
 
 Still, for many, Databricks hits the sweet spot of managed infrastructure, OSS compatibility, and platform maturity.
 
+## Comparison Table
+
+| Platform Type | Scale | Maintenance | Flexibility | Cost | Best For |
+|--------------|-------|-------------|-------------|------|----------|
+| In-House (Uber) | Very High | Very High | Very High | High | Large tech companies |
+| Modular (Airbnb) | High | Medium | High | Medium | Mid-size product orgs |
+| OSS Stack | High | Medium | Very High | Low to Med | Startups with ML infra teams |
+| Cloud-Managed | Med-High | Low | Medium | Medium-High | Teams without infra engineers |
+| Commercial AutoML | Medium | Low | Low | High | Traditional enterprises |
+
 ## Final Thoughts
 
 There's no one right ML platform architecture. What matters is choosing something that aligns with your team's size, experience, and goals.
