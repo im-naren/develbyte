@@ -2,7 +2,7 @@
 slug: how-to-implement-singly-linked-list-in-java
 title: How to Implement Singly Linked List in Java
 authors: [narendra]
-tags: [java, coding, data-structure, algorithms]
+tags: [algorithms]
 date: 2015-05-15
 ---
 

@@ -12,7 +12,6 @@ import SearchMetadata from '@theme/SearchMetadata';
 import type {Props} from '@theme/BlogListPage';
 import BlogPostItems from '@theme/BlogPostItems';
 import Link from '@docusaurus/Link';
-import BlogTagsFilter from '@site/src/components/BlogTagsFilter';
 import styles from './styles.module.css';
 
 function BlogListPageMetadata(props: Props): JSX.Element {
@@ -44,61 +43,86 @@ function BlogListPageContent(props: Props): JSX.Element {
     });
   }, [items, selectedTag]);
 
+  // Extract all unique tags for the filter
+  const allTags = React.useMemo(() => {
+    const tagSet = new Set<string>();
+    items.forEach(({content: BlogPostContent}) => {
+      const tags = BlogPostContent.metadata.tags || [];
+      tags.forEach((tag) => tagSet.add(tag.label));
+    });
+    return Array.from(tagSet).sort();
+  }, [items]);
+
   return (
     <div className={styles.blogListPage}>
-      <div className={styles.contentContainer}>
-        <div className={styles.mainContent}>
-          <h1 className={styles.pageTitle}>Recent Posts</h1>
-          {selectedTag && (
-            <div className={styles.filterInfo}>
-              Showing posts tagged with <strong>{selectedTag}</strong>
-              <button 
-                className={styles.clearFilter}
-                onClick={() => setSelectedTag(null)}
-              >
-                × Clear filter
-              </button>
-            </div>
-          )}
-          <div className={styles.blogArchive}>
-            {filteredItems.length === 0 ? (
-              <div className={styles.noResults}>
-                No posts found with tag "{selectedTag}".
-              </div>
-            ) : (
-              <div className={styles.postsList}>
-                {filteredItems.map(({content: BlogPostContent}) => {
-                  const {metadata: postMetadata} = BlogPostContent;
-                  const date = new Date(postMetadata.date);
-                  const formattedDate = date.toLocaleDateString('en-US', {
-                    year: 'numeric',
-                    month: 'long',
-                    day: 'numeric',
-                  });
-
-                  return (
-                    <div key={postMetadata.permalink} className={styles.blogItem}>
-                      <span className={styles.blogDate}>{formattedDate}:</span>
-                      <Link to={postMetadata.permalink} className={styles.blogLink}>
-                        {postMetadata.title}
-                      </Link>
-                    </div>
-                  );
-                })}
-              </div>
-            )}
-          </div>
-          {!selectedTag && <BlogListPaginator metadata={metadata} />}
-        </div>
-        
-        <aside className={styles.sidebar}>
-          <BlogTagsFilter 
-            selectedTag={selectedTag}
-            onTagSelect={setSelectedTag}
-            items={items}
-          />
-        </aside>
+      <h1 className={styles.pageTitle}>Recent Posts</h1>
+      
+      {/* Tags filter */}
+      <div style={{ marginBottom: '2rem', display: 'flex', flexWrap: 'wrap', gap: '0.5rem' }}>
+        <button
+          onClick={() => setSelectedTag(null)}
+          style={{
+            padding: '0.5rem 1rem',
+            background: !selectedTag ? 'rgba(255, 204, 0, 0.2)' : 'rgba(60, 60, 60, 0.4)',
+            border: !selectedTag ? '1px solid rgba(255, 204, 0, 0.5)' : '1px solid rgba(80, 80, 80, 0.3)',
+            borderRadius: '4px',
+            color: !selectedTag ? '#FFCC00' : '#B8B8B8',
+            cursor: 'pointer',
+            fontSize: '0.9rem',
+            fontWeight: !selectedTag ? 600 : 400,
+          }}
+        >
+          All Posts ({items.length})
+        </button>
+        {allTags.map((tag) => (
+          <button
+            key={tag}
+            onClick={() => setSelectedTag(tag)}
+            style={{
+              padding: '0.5rem 1rem',
+              background: selectedTag === tag ? 'rgba(255, 204, 0, 0.2)' : 'rgba(60, 60, 60, 0.4)',
+              border: selectedTag === tag ? '1px solid rgba(255, 204, 0, 0.5)' : '1px solid rgba(80, 80, 80, 0.3)',
+              borderRadius: '4px',
+              color: selectedTag === tag ? '#FFCC00' : '#B8B8B8',
+              cursor: 'pointer',
+              fontSize: '0.9rem',
+              fontWeight: selectedTag === tag ? 600 : 400,
+            }}
+          >
+            {tag}
+          </button>
+        ))}
       </div>
+
+      <div className={styles.blogArchive}>
+        {filteredItems.length === 0 ? (
+          <div className={styles.noResults}>
+            No posts found with tag "{selectedTag}".
+          </div>
+        ) : (
+          <div className={styles.postsList}>
+            {filteredItems.map(({content: BlogPostContent}) => {
+              const {metadata: postMetadata} = BlogPostContent;
+              const date = new Date(postMetadata.date);
+              const formattedDate = date.toLocaleDateString('en-US', {
+                year: 'numeric',
+                month: 'long',
+                day: 'numeric',
+              });
+
+              return (
+                <div key={postMetadata.permalink} className={styles.blogItem}>
+                  <span className={styles.blogDate}>{formattedDate}:</span>
+                  <Link to={postMetadata.permalink} className={styles.blogLink}>
+                    {postMetadata.title}
+                  </Link>
+                </div>
+              );
+            })}
+          </div>
+        )}
+      </div>
+      {!selectedTag && <BlogListPaginator metadata={metadata} />}
     </div>
   );
 }

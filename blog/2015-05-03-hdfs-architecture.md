@@ -2,7 +2,7 @@
 slug: hdfs-architecture
 title: HDFS Architecture
 authors: [narendra]
-tags: [hadoop, hdfs, big-data, architecture]
+tags: [hdfs, big-data, architecture]
 date: 2015-05-03
 ---
 

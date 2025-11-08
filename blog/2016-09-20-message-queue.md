@@ -2,7 +2,7 @@
 slug: message-queue
 title: Message Queue
 authors: [narendra]
-tags: [big-data, kafka, message-queue, distributed-systems]
+tags: [big-data, message-queue, distributed-systems]
 date: 2016-09-20
 ---
 

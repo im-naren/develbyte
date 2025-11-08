@@ -2,7 +2,7 @@
 slug: zookeeper-namespace-and-operations
 title: Zookeeper Namespace And Operations
 authors: [narendra]
-tags: [zookeeper, distributed-computing, kafka, coordination]
+tags: [zookeeper, distributed-computing, coordination]
 date: 2016-10-27
 ---
 

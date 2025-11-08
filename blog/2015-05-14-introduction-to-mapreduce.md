@@ -2,7 +2,7 @@
 slug: introduction-to-mapreduce
 title: Introduction To MapReduce
 authors: [narendra]
-tags: [hadoop, mapreduce, big-data, java]
+tags: [big-data]
 date: 2015-05-14
 ---
 

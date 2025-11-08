@@ -2,7 +2,7 @@
 slug: how-to-sort-a-hashmap-on-values
 title: How to sort a HashMap on Values
 authors: [narendra]
-tags: [java, coding, data-structure, algorithms]
+tags: [algorithms]
 date: 2015-05-25
 ---
 

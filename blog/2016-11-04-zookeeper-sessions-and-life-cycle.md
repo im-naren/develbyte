@@ -2,7 +2,7 @@
 slug: zookeeper-sessions-and-life-cycle
 title: Zookeeper Sessions and life cycle
 authors: [narendra]
-tags: [zookeeper, distributed-computing, kafka, coordination]
+tags: [zookeeper, distributed-computing, coordination]
 date: 2016-11-04
 ---
 
