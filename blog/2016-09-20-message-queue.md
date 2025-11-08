@@ -2,7 +2,7 @@
 slug: message-queue
 title: Message Queue
 authors: [narendra]
-tags: [big-data, message-queue, distributed-systems]
+tags: [distributed-systems, architecture, database]
 date: 2016-09-20
 ---
 

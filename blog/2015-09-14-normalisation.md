@@ -2,7 +2,7 @@
 slug: normalisation
 title: Normalisation
 authors: [narendra]
-tags: [database, design]
+tags: [system-design, database]
 date: 2015-09-14
 ---
 

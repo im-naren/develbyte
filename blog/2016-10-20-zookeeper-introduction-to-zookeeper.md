@@ -2,7 +2,7 @@
 slug: zookeeper-introduction-to-zookeeper
 title: Zookeeper Introduction to Zookeeper
 authors: [narendra]
-tags: [zookeeper, distributed-computing, coordination]
+tags: [distributed-systems, architecture, database]
 date: 2016-10-20
 ---
 

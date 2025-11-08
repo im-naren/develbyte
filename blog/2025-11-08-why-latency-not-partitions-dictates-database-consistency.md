@@ -2,7 +2,7 @@
 slug: why-latency-not-partitions-dictates-database-consistency
 title: Why Latency, Not Partitions, Dictates Your Database's Consistency
 authors: narendra
-tags: [distributed-systems, databases, cap-theorem, consistency, architecture]
+tags: [distributed-systems, architecture, database]
 ---
 # Why Latency, Not Partitions, Dictates Your Database’s Consistency [50Week50Papper]
 

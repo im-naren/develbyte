@@ -2,7 +2,7 @@
 slug: mapreduce-execution-in-hadoop
 title: MapReduce Execution in Hadoop
 authors: [narendra]
-tags: [big-data]
+tags: []
 date: 2015-03-10
 ---
 
