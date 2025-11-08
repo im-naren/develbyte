@@ -49,7 +49,6 @@ const config: Config = {
             type: ['rss', 'atom'],
             xslt: true,
           },
-          routeBasePath: '/', // Make blog the homepage
           authorsMapPath: 'authors.yml',
           // Useful options to enforce blogging best practices
           onInlineTags: 'warn',
