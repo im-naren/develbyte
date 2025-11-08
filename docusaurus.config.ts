@@ -141,11 +141,11 @@ const config: Config = {
           items: [
             {
               label: 'RSS Feed',
-              to: '/rss.xml',
+              to: '/blog/rss.xml',
             },
             {
               label: 'Atom Feed',
-              to: '/atom.xml',
+              to: '/blog/atom.xml',
             },
           ],
         },
