@@ -49,8 +49,8 @@
 }
 
 .avatar {
-  width: 140px;
-  height: 180px;
+  width: 180px;
+  height: 240px;
   border-radius: 8px;
   border: 2px solid #FFFF66;
   box-shadow: 0 4px 12px rgba(255, 255, 102, 0.4);
