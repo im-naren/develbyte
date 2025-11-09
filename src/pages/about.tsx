@@ -19,11 +19,11 @@ export default function About(): React.JSX.Element {
                     height: '200px',
                     borderRadius: '50%',
                     objectFit: 'cover',
-                    border: '3px solid rgba(255, 204, 0, 0.3)'
+                    border: '3px solid rgba(255, 255, 102, 0.3)'
                   }}
                 />
                 <div style={{ flex: 1, minWidth: '300px' }}>
-                  <h2 style={{ marginTop: '0', marginBottom: '0.5rem', fontSize: '2rem', color: '#FFCC00' }}>
+                  <h2 style={{ marginTop: '0', marginBottom: '0.5rem', fontSize: '2rem', color: '#FFFF66' }}>
                     Narendra Dubey
                   </h2>
                   <p style={{ fontSize: '1.1rem', fontStyle: 'italic', color: '#B8B8B8', marginBottom: '1rem' }}>
@@ -34,10 +34,10 @@ export default function About(): React.JSX.Element {
                       href="https://github.com/im-naren" 
                       style={{ 
                         padding: '0.4rem 1rem',
-                        background: 'rgba(255, 204, 0, 0.1)',
-                        border: '1px solid rgba(255, 204, 0, 0.3)',
+                        background: 'rgba(255, 255, 102, 0.1)',
+                        border: '1px solid rgba(255, 255, 102, 0.3)',
                         borderRadius: '4px',
-                        color: '#FFCC00',
+                        color: '#FFFF66',
                         textDecoration: 'none',
                         fontSize: '0.9rem',
                         transition: 'all 0.2s ease'
@@ -45,12 +45,12 @@ export default function About(): React.JSX.Element {
                       target="_blank"
                       rel="noopener noreferrer"
                       onMouseEnter={(e) => {
-                        e.currentTarget.style.background = 'rgba(255, 204, 0, 0.2)';
-                        e.currentTarget.style.borderColor = 'rgba(255, 204, 0, 0.5)';
+                        e.currentTarget.style.background = 'rgba(255, 255, 102, 0.2)';
+                        e.currentTarget.style.borderColor = 'rgba(255, 255, 102, 0.5)';
                       }}
                       onMouseLeave={(e) => {
-                        e.currentTarget.style.background = 'rgba(255, 204, 0, 0.1)';
-                        e.currentTarget.style.borderColor = 'rgba(255, 204, 0, 0.3)';
+                        e.currentTarget.style.background = 'rgba(255, 255, 102, 0.1)';
+                        e.currentTarget.style.borderColor = 'rgba(255, 255, 102, 0.3)';
                       }}
                     >
                       GitHub
@@ -59,10 +59,10 @@ export default function About(): React.JSX.Element {
                       href="https://linkedin.com/in/im-naren" 
                       style={{ 
                         padding: '0.4rem 1rem',
-                        background: 'rgba(255, 204, 0, 0.1)',
-                        border: '1px solid rgba(255, 204, 0, 0.3)',
+                        background: 'rgba(255, 255, 102, 0.1)',
+                        border: '1px solid rgba(255, 255, 102, 0.3)',
                         borderRadius: '4px',
-                        color: '#FFCC00',
+                        color: '#FFFF66',
                         textDecoration: 'none',
                         fontSize: '0.9rem',
                         transition: 'all 0.2s ease'
@@ -70,12 +70,12 @@ export default function About(): React.JSX.Element {
                       target="_blank"
                       rel="noopener noreferrer"
                       onMouseEnter={(e) => {
-                        e.currentTarget.style.background = 'rgba(255, 204, 0, 0.2)';
-                        e.currentTarget.style.borderColor = 'rgba(255, 204, 0, 0.5)';
+                        e.currentTarget.style.background = 'rgba(255, 255, 102, 0.2)';
+                        e.currentTarget.style.borderColor = 'rgba(255, 255, 102, 0.5)';
                       }}
                       onMouseLeave={(e) => {
-                        e.currentTarget.style.background = 'rgba(255, 204, 0, 0.1)';
-                        e.currentTarget.style.borderColor = 'rgba(255, 204, 0, 0.3)';
+                        e.currentTarget.style.background = 'rgba(255, 255, 102, 0.1)';
+                        e.currentTarget.style.borderColor = 'rgba(255, 255, 102, 0.3)';
                       }}
                     >
                       LinkedIn
@@ -84,21 +84,21 @@ export default function About(): React.JSX.Element {
                       href="mailto:naren.dubey@zoho.com" 
                       style={{ 
                         padding: '0.4rem 1rem',
-                        background: 'rgba(255, 204, 0, 0.1)',
-                        border: '1px solid rgba(255, 204, 0, 0.3)',
+                        background: 'rgba(255, 255, 102, 0.1)',
+                        border: '1px solid rgba(255, 255, 102, 0.3)',
                         borderRadius: '4px',
-                        color: '#FFCC00',
+                        color: '#FFFF66',
                         textDecoration: 'none',
                         fontSize: '0.9rem',
                         transition: 'all 0.2s ease'
                       }}
                       onMouseEnter={(e) => {
-                        e.currentTarget.style.background = 'rgba(255, 204, 0, 0.2)';
-                        e.currentTarget.style.borderColor = 'rgba(255, 204, 0, 0.5)';
+                        e.currentTarget.style.background = 'rgba(255, 255, 102, 0.2)';
+                        e.currentTarget.style.borderColor = 'rgba(255, 255, 102, 0.5)';
                       }}
                       onMouseLeave={(e) => {
-                        e.currentTarget.style.background = 'rgba(255, 204, 0, 0.1)';
-                        e.currentTarget.style.borderColor = 'rgba(255, 204, 0, 0.3)';
+                        e.currentTarget.style.background = 'rgba(255, 255, 102, 0.1)';
+                        e.currentTarget.style.borderColor = 'rgba(255, 255, 102, 0.3)';
                       }}
                     >
                       Email

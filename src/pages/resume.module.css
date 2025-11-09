@@ -15,12 +15,12 @@
 
 /* Link Styles - Yellow theme */
 .resumeContent a {
-  color: #FFCC00;
+  color: #FFFF66;
   text-decoration: underline;
 }
 
 .resumeContent a:hover {
-  color: #FFD700;
+  color: #FFFF99;
 }
 
 /* Header Section - ClickHouse Theme */
@@ -28,7 +28,7 @@
   background: linear-gradient(135deg, #1A1A1A, #2D2D2D);
   color: white;
   padding: 3rem 2rem;
-  border-bottom: 4px solid #FFCC00;
+  border-bottom: 4px solid #FFFF66;
 }
 
 .headerContent {
@@ -47,8 +47,8 @@
   width: 120px;
   height: 120px;
   border-radius: 50%;
-  border: 4px solid #FFCC00;
-  box-shadow: 0 4px 12px rgba(255, 204, 0, 0.4);
+  border: 4px solid #FFFF66;
+  box-shadow: 0 4px 12px rgba(255, 255, 102, 0.4);
   transition: all 0.3s;
   object-fit: cover;
   object-position: center center;
@@ -56,7 +56,7 @@
 
 .avatar:hover {
   transform: scale(1.05);
-  box-shadow: 0 6px 16px rgba(255, 204, 0, 0.6);
+  box-shadow: 0 6px 16px rgba(255, 255, 102, 0.6);
 }
 
 .headerInfo {
@@ -98,12 +98,12 @@
 }
 
 .contactInfo a {
-  color: #FFCC00;
+  color: #FFFF66;
   text-decoration: underline;
 }
 
 .contactInfo a:hover {
-  color: #FFD700;
+  color: #FFFF99;
 }
 
 .links {
@@ -114,12 +114,12 @@
 }
 
 .links a {
-  color: #FFCC00;
+  color: #FFFF66;
   text-decoration: underline;
 }
 
 .links a:hover {
-  color: #FFD700;
+  color: #FFFF99;
 }
 
 .downloadSection {
@@ -128,7 +128,7 @@
 }
 
 .downloadBtn {
-  background: #FFCC00;
+  background: #FFFF66;
   color: #1A1A1A !important;
   padding: 0.75rem 1.5rem;
   border-radius: 6px;
@@ -136,13 +136,13 @@
   font-weight: 700;
   transition: all 0.2s;
   white-space: nowrap;
-  box-shadow: 0 2px 8px rgba(255, 204, 0, 0.3);
+  box-shadow: 0 2px 8px rgba(255, 255, 102, 0.3);
 }
 
 .downloadBtn:hover {
   transform: translateY(-2px);
-  box-shadow: 0 4px 12px rgba(255, 204, 0, 0.5);
-  background: #FFD700;
+  box-shadow: 0 4px 12px rgba(255, 255, 102, 0.5);
+  background: #FFFF99;
   color: #000 !important;
 }
 
@@ -150,7 +150,7 @@
 .achievements {
   padding: 2rem;
   background: #FFF9E6;
-  border-left: 4px solid #FFCC00;
+  border-left: 4px solid #FFFF66;
 }
 
 html[data-theme='dark'] .achievements {
@@ -243,7 +243,7 @@ html[data-theme='dark'] .sectionTitle:hover {
   font-size: 1.25rem;
   font-weight: 600;
   margin: 0 0 0.25rem 0;
-  color: #FFCC00;
+  color: #FFFF66;
 }
 
 .jobLocation {
@@ -515,7 +515,7 @@ html[data-theme='dark'] .skillTags span:hover {
 
   .achievements {
     background: #FFF9E6;
-    border-left: 4px solid #FFCC00;
+    border-left: 4px solid #FFFF66;
     -webkit-print-color-adjust: exact;
     print-color-adjust: exact;
   }
