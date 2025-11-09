@@ -12,7 +12,7 @@
 }
 
 .tagsFilterHeader {
-  color: #FFCC00;
+  color: #FFFF66;
   font-size: 0.75rem;
   font-weight: 700;
   letter-spacing: 0.05em;
@@ -51,9 +51,9 @@
 }
 
 .tagItemActive {
-  background: rgba(255, 204, 0, 0.1) !important;
-  border-color: rgba(255, 204, 0, 0.3) !important;
-  color: #FFCC00 !important;
+  background: rgba(255, 255, 102, 0.1) !important;
+  border-color: rgba(255, 255, 102, 0.3) !important;
+  color: #FFFF66 !important;
 }
 
 .tagLabel {
@@ -76,8 +76,8 @@
 }
 
 .tagItemActive .tagCount {
-  background: rgba(255, 204, 0, 0.2);
-  color: #FFCC00;
+  background: rgba(255, 255, 102, 0.2);
+  color: #FFFF66;
 }
 
 /* Custom scrollbar */

@@ -85,7 +85,7 @@ export default function Resume(): React.JSX.Element {
               <div className={styles.jobHeader}>
                 <div>
                   <h3 className={styles.jobTitle}>
-                    Sr. Engineering Manager - Data [Data & ML Platform and Data Products] @Razorpay
+                    Sr. Engineering Manager - Platform Data & AIML @Razorpay
                   </h3>
                   <p className={styles.jobLocation}>Hybrid | Apr 2022 - Present</p>
                 </div>
@@ -107,23 +107,24 @@ export default function Resume(): React.JSX.Element {
                   <li>
                     <strong>Data platform re-architecture</strong>
                     <ul>
-                      <li>Reducing Data Platform Cost by 52M, while improving the availability to 99% and data quality issues by 97%.</li>
+                      <li><a href='https://engineering.razorpay.com/reducing-data-platform-cost-by-2m-d8f82285c4ae'>Reducing Data Platform Cost by $2M</a>, while improving the availability to 99% and data quality issues by 97%.</li>
                       <li>10+ thousand dashboards and, supporting key business decisions.</li>
                       <li>3.6 Petabytes Storage, 56B+ event ingestion per day, 10min+ latency</li>
                       <li>Scaled Trino to support 189+ million queries per month.</li>
                     </ul>
                   </li>
                   <li>
-                    <strong>Merchant Reporting Platform:</strong> reducing operational costs by 74% while maintaining an SLA of 99.99%. 523+ thousand financial reports per month
+                    <strong><a href='https://razorpay.com/docs/payments/dashboard/reports/'>Merchant Reporting Platform:</a></strong> reducing operational costs by 74% while maintaining an SLA of 99.99%. 523+ thousand financial reports per month
+                    
                   </li>
                   <li>
-                    <strong>Real-time streaming platform</strong> capable of handling a 500x traffic surge during high-traffic events (e.g, IPL), ensuring zero downtime
+                    <strong><a href='https://engineering.razorpay.com/real-time-denormalized-data-streaming-platform-part-1-9f3c730dd9c6'>Real-time streaming platform</a></strong> capable of handling a 500x traffic surge during high-traffic events (e.g, IPL), ensuring zero downtime
                   </li>
                   <li>
                     Envisioned, designed & launched two new products [Data Sync & Insights]
                     <ul>
-                      <li>Razorpay Becomes First PA to Launch 'DataSync': No code data integrations solution</li>
-                      <li>Razorpay InsightX is AI-driven insights platform for merchants</li>
+                      <li><a href='https://razorpay.com/newsroom/razorpay-becomes-first-pa-to-launch-datasync-a-real-time-data-integration-platform-with-aws-and-snowflake-saves-up-to-50-on-operational-costs-for-indian-businesses/'>Razorpay Becomes First PA to Launch 'DataSync': No code data integrations solution</a></li>
+                      <li><a href='https://razorpay.com/newsroom/razorpay-launches-razorpay-insightx-a-real-time-ai-powered-insights-platform-for-merchants/'>Razorpay InsightX is AI-driven insights platform for merchants</a></li>
                     </ul>
                   </li>
                 </ul>
@@ -133,7 +134,7 @@ export default function Resume(): React.JSX.Element {
             <div className={styles.job}>
               <div className={styles.jobHeader}>
                 <div>
-                  <h3 className={styles.jobTitle}>Engineering Manager - Data and DevOps @OkCredit</h3>
+                  <h3 className={styles.jobTitle}>Engineering Manager - Plaftorm Data & DevOps @OkCredit</h3>
                   <p className={styles.jobLocation}>Remote | May 2021 - Mar 2022</p>
                 </div>
               </div>
@@ -162,7 +163,7 @@ export default function Resume(): React.JSX.Element {
             <div className={styles.job}>
               <div className={styles.jobHeader}>
                 <div>
-                  <h3 className={styles.jobTitle}>Sr. Big Data Engineer @Meesho</h3>
+                  <h3 className={styles.jobTitle}>Sr. Engineer - Platform Data Infrastructure @Meesho</h3>
                   <p className={styles.jobLocation}>Bangalore | Mar 2019 - Mar 2020</p>
                 </div>
               </div>
@@ -181,7 +182,7 @@ export default function Resume(): React.JSX.Element {
                 </div>
               </div>
               <ul>
-                <li>Designed and developed Piparr™ - AI for Enterprise DataOps from scratch</li>
+                <li>Designed and developed <a href='https://www.piperr.io/'>Piparr™ - AI for Enterprise DataOps</a> from scratch</li>
                 <li>Real-time streaming apps for fraud detection and data enrichment</li>
                 <li>Implemented Cross Category Recommendation Engine, with four algorithms delivering 500K+ recommendations/day.</li>
                 <li>Built and trained chatbot for booking flight and hotel tickets, with NER for destinations, dates, names and different domain-related keywords</li>
@@ -225,7 +226,7 @@ export default function Resume(): React.JSX.Element {
               <div className={styles.certification}>
                 <div className={styles.certBadge}>CSM</div>
                 <div>
-                  <p><strong>Scrum Alliance - Certified Scrum Master</strong></p>
+                  <p><strong><a href='https://www.scrumalliance.org/certifications/certified-scrummaster-csm'>Scrum Alliance - Certified Scrum Master</a></strong></p>
                 </div>
               </div>
             </section>
