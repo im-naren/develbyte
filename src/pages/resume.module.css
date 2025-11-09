@@ -49,11 +49,8 @@
 }
 
 .avatar {
-  width: 180px;
-  height: 240px;
-  border-radius: 8px;
-  border: none;
-  box-shadow: 0 4px 12px rgba(255, 255, 102, 0.4);
+  width: 230px;
+  height: 290px;
   transition: all 0.3s;
   object-fit: cover;
   object-position: 65% center;
@@ -61,7 +58,6 @@
 
 .avatar:hover {
   transform: scale(1.05);
-  box-shadow: 0 6px 16px rgba(255, 255, 102, 0.6);
 }
 
 .headerInfo {
