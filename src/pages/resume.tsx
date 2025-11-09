@@ -19,7 +19,7 @@ export default function Resume(): React.JSX.Element {
               <div className={styles.headerInfo}>
                 <h1 className={styles.name}>Narendra Kumar</h1>
                 <p className={styles.title}>
-                  Sr. Engineering Manager @Razorpay | xCurefit | xMeesho
+                  Sr. Engineering Manager - Platform Data & AIML @Razorpay | xCurefit | xMeesho
                 </p>
                 <p className={styles.summary}>
                   14+ years of experience building & leading cross-functional teams to build
@@ -235,35 +235,18 @@ export default function Resume(): React.JSX.Element {
           {/* Skills Section */}
           <section className={styles.section}>
             <h2 className={styles.sectionTitle}>Skills</h2>
-            
-            <div className={styles.skillsGrid}>
-              <div className={styles.skillCategory}>
-                <h3>Technical Skills</h3>
-                <div className={styles.skillTags}>
-                  <span>System Architecture</span>
-                  <span>Problem-Solving</span>
-                  <span>Spark / Kafka</span>
-                  <span>Redshift / BigQuery</span>
-                  <span>Pinot / TIDB</span>
-                  <span>Python / Java / Scala / Go</span>
-                  <span>AWS / GCP</span>
-                </div>
+              <div className={styles.skillTags}>
+                <span>Distributed System</span>
+                <span>Problem Solving</span>
+                <span>Hiring Rockstar Engineer</span>
+                <span>Strategic Planning</span>
+                <span>Agile Methodology</span>
+                <span>Product Development</span>
+                <span>Root Cause Analysis</span>
+                <span>Continuous Improvement</span>
+                <span>Delegation</span>
+                
               </div>
-
-              <div className={styles.skillCategory}>
-                <h3>Project Management Skills</h3>
-                <div className={styles.skillTags}>
-                  <span>Annual Planning</span>
-                  <span>Agile Methodology</span>
-                  <span>Product development</span>
-                  <span>Time management</span>
-                  <span>Root Cause Analysis</span>
-                  <span>Continuous Improvement</span>
-                  <span>Delegation</span>
-                  <span>Strategic Planning</span>
-                </div>
-              </div>
-            </div>
           </section>
         </div>
       </div>
