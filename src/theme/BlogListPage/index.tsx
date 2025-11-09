@@ -63,10 +63,10 @@ function BlogListPageContent(props: Props): JSX.Element {
           onClick={() => setSelectedTag(null)}
           style={{
             padding: '0.5rem 1rem',
-            background: !selectedTag ? 'rgba(255, 204, 0, 0.2)' : 'rgba(60, 60, 60, 0.4)',
-            border: !selectedTag ? '1px solid rgba(255, 204, 0, 0.5)' : '1px solid rgba(80, 80, 80, 0.3)',
+            background: !selectedTag ? 'rgba(255, 255, 102, 0.2)' : 'rgba(60, 60, 60, 0.4)',
+            border: !selectedTag ? '1px solid rgba(255, 255, 102, 0.5)' : '1px solid rgba(80, 80, 80, 0.3)',
             borderRadius: '4px',
-            color: !selectedTag ? '#FFCC00' : '#B8B8B8',
+            color: !selectedTag ? '#FFFF66' : '#B8B8B8',
             cursor: 'pointer',
             fontSize: '0.9rem',
             fontWeight: !selectedTag ? 600 : 400,
@@ -80,10 +80,10 @@ function BlogListPageContent(props: Props): JSX.Element {
             onClick={() => setSelectedTag(tag)}
             style={{
               padding: '0.5rem 1rem',
-              background: selectedTag === tag ? 'rgba(255, 204, 0, 0.2)' : 'rgba(60, 60, 60, 0.4)',
-              border: selectedTag === tag ? '1px solid rgba(255, 204, 0, 0.5)' : '1px solid rgba(80, 80, 80, 0.3)',
+              background: selectedTag === tag ? 'rgba(255, 255, 102, 0.2)' : 'rgba(60, 60, 60, 0.4)',
+              border: selectedTag === tag ? '1px solid rgba(255, 255, 102, 0.5)' : '1px solid rgba(80, 80, 80, 0.3)',
               borderRadius: '4px',
-              color: selectedTag === tag ? '#FFCC00' : '#B8B8B8',
+              color: selectedTag === tag ? '#FFFF66' : '#B8B8B8',
               cursor: 'pointer',
               fontSize: '0.9rem',
               fontWeight: selectedTag === tag ? 600 : 400,

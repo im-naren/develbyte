@@ -85,13 +85,12 @@ const config: Config = {
       title: '',
       logo: {
         alt: 'Develbyte Logo',
-        src: 'data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMTAwIiBoZWlnaHQ9IjQwIiB2aWV3Qm94PSIwIDAgMTAwIDQwIiBmaWxsPSJub25lIiB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciPgo8cmVjdCB3aWR0aD0iMTAwIiBoZWlnaHQ9IjQwIiByeD0iNCIgZmlsbD0iI0ZGQ0MwMCIvPgo8dGV4dCB4PSI1MCIgeT0iMjUiIGZvbnQtZmFtaWx5PSJBcmlhbCwgc2Fucy1zZXJpZiIgZm9udC1zaXplPSIxNCIgZm9udC13ZWlnaHQ9IjkwMCIgZmlsbD0iIzFBMUExQSIgdGV4dC1hbmNob3I9Im1pZGRsZSI+REVWRUxCWVRFPC90ZXh0Pgo8L3N2Zz4=',
+        src: 'data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMTAwIiBoZWlnaHQ9IjQwIiB2aWV3Qm94PSIwIDAgMTAwIDQwIiBmaWxsPSJub25lIiB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciPgo8cmVjdCB3aWR0aD0iMTAwIiBoZWlnaHQ9IjQwIiByeD0iNCIgZmlsbD0iI0ZGRkY2NiIvPgo8dGV4dCB4PSI1MCIgeT0iMjUiIGZvbnQtZmFtaWx5PSJBcmlhbCwgc2Fucy1zZXJpZiIgZm9udC1zaXplPSIxNCIgZm9udC13ZWlnaHQ9IjkwMCIgZmlsbD0iIzFBMUExQSIgdGV4dC1hbmNob3I9Im1pZGRsZSI+REVWRUxCWVRFPC90ZXh0Pgo8L3N2Zz4=',
         href: '/',
       },
       hideOnScroll: false,
       items: [
         {to: '/about', label: 'About', position: 'left'},
-        {to: '/resume', label: 'Resume', position: 'left'},
         {to: '/', label: 'Blog', position: 'left'},
         {
           href: 'https://github.com/im-naren',
