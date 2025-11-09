@@ -27,7 +27,7 @@
 .header {
   background: linear-gradient(135deg, #1A1A1A, #2D2D2D);
   color: white;
-  padding: 3rem 2rem;
+  padding: 3rem 2rem 3rem 0;
   border-bottom: 4px solid #FFFF66;
 }
 
@@ -49,8 +49,8 @@
 }
 
 .avatar {
-  width: 100px;
-  height: 140px;
+  width: 140px;
+  height: 180px;
   border-radius: 8px;
   border: 2px solid #FFFF66;
   box-shadow: 0 4px 12px rgba(255, 255, 102, 0.4);
