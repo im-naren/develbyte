@@ -20,7 +20,7 @@ Almost every database we touch today — RocksDB, Cassandra, HBase, LevelDB, Dyn
 > "LSM Trees are faster for writes, slower for reads, and compaction is expensive."
 
 That's not wrong — but it's dangerously incomplete.
-
+<!--truncate-->
 Reading O'Neil's original LSM paper alongside WiscKey felt like watching the **evolution of an idea across two decades of hardware change**. One was written when disks were slow, RAM was scarce, and SSDs didn't exist. The other assumes flash is the default and asks a deceptively simple question:
 
 > *What if keys and values don't belong together?*
@@ -29,7 +29,6 @@ This post is my attempt to unpack **what LSM Trees actually optimize for**, why 
 
 If you build databases, data platforms, or even just tune RocksDB configs in production, this is not academic history. This is operational reality.
 
----
 
 ## The Core Problem: Why B-Trees Started to Break
 
@@ -60,8 +59,6 @@ The LSM Tree was not designed to be "cool."
 
 It was designed to **survive write-heavy workloads**.
 
----
-
 ## LSM Trees in Plain Language
 
 At a high level, an **LSM Tree trades read complexity for write efficiency**.
@@ -90,8 +87,6 @@ The brilliance is not the data structure itself — it's the **I/O pattern**:
 * Sequential writes
 * Batched reads
 * Deferred cleanup
-
----
 
 ## My Takeaways from the LSM Paper
 
@@ -130,8 +125,6 @@ This is where **write amplification** is born.
 
 And this is where WiscKey enters the story.
 
----
-
 ## Enter WiscKey: Separating Keys from Values
 
 WiscKey starts with an uncomfortable observation:
@@ -161,8 +154,6 @@ This simple separation produces dramatic results:
 * **Better SSD endurance**
 
 The authors show reductions in write amplification by **an order of magnitude** for value-heavy workloads.
-
----
 
 ## The Technical Deep Dive (Without the Math Overdose)
 
@@ -198,8 +189,6 @@ This is the recurring theme across storage systems:
 
 > You don't eliminate costs — you *move* them.
 
----
-
 ## Connecting This to Real Systems
 
 Once you see it, you can't unsee it.
@@ -210,8 +199,6 @@ Once you see it, you can't unsee it.
 * **TiKV / Pebble**: Explicit engineering around compaction debt
 
 WiscKey isn't just a paper — it's a design lens.
-
----
 
 ## Common Misconceptions This Paper Corrected for Me
 
@@ -242,8 +229,6 @@ WiscKey exists *because* SSDs exposed new bottlenecks:
 * Internal flash amplification
 * Garbage collection interference
 
----
-
 ## Practical Design Guidelines
 
 If you're designing or operating an LSM-based system:
@@ -268,8 +253,6 @@ If you're designing or operating an LSM-based system:
 
 * Write-heavy ingestion → LSM shines
 * Read-heavy OLTP → hybrid or B-Tree may win
-
----
 
 ## Where Do We Go from Here?
 
