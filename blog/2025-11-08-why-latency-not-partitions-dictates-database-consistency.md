@@ -1,15 +1,15 @@
 ---
 slug: why-latency-not-partitions-dictates-database-consistency
-title: Why Latency, Not Partitions, Dictates Your Database's Consistency [50Week50Papper]
+title: Why Latency, Not Partitions, Dictates Your Database's Consistency [50PaperChallenge]
 authors: narendra
-tags: [distributed-systems, architecture, database, 50Week50Papper]
+tags: [distributed-systems, architecture, database, 50PaperChallenge]
 ---
 # Why Latency, Not Partitions, Dictates Your Database’s Consistency
 
 
-Confession: As someone with dyslexia, I’m definitely not a fan of long, dense academic text. Video lectures have always been my preferred way to learn. Honestly, reading research papers is something I’ve dodged for years—too much jargon, too many walls of text, and not enough clarity. But that’s exactly why I’m giving myself this challenge 50Week50Papper: I want to see how far I can go if I really stick with it, and whether pushing through helps me learn things that actually last.
+Confession: As someone with difficulty reading a lot of text, I’m definitely not a fan of long, dense academic text. Video lectures have always been my preferred way to learn. Honestly, reading research papers is something I’ve dodged for years—too much jargon, too many walls of text, and not enough clarity. But that’s exactly why I’m giving myself this challenge #50PaperChallenge: I want to see how far I can go if I really stick with it, and whether pushing through helps me learn things that actually last.
 
-My goal isn’t just to skim headlines or collect citations. I want to go deeper—reading one seminal technical whitepaper every week and really figuring out what’s inside, even if that means slowing down, re-reading, and wrestling with tough concepts.
+My goal isn’t just to skim headlines or collect citations. I want to go deeper—reading seminal technical whitepapers and really figuring out what’s inside, even if that means slowing down, re-reading, and wrestling with tough concepts.
 
 But here’s the twist: I’m doing all this in public, right here, as a sort of open online notebook.
 
@@ -21,7 +21,7 @@ Why? Two big reasons:
 
 So, consider this an open journal. I’ll do my best to cut through the jargon, flag the breakthroughs, and be honest about what clicked and what didn’t.
 
-Welcome to Week 1! And to kick things off, I picked a paper that’s sparked more conversations (and arguments!) in our world than almost any other:
+To kick things off, I picked a paper that’s sparked more conversations (and arguments!) in our world than almost any other:
 
 [Consistency Tradeoffs in Modern Distributed Database System Design by Daniel Abadi](https://www.cs.umd.edu/~abadi/papers/abadi-pacelc.pdf)
 
@@ -96,11 +96,11 @@ So, next time you're whiteboarding an architecture or comparing databases, don't
 > **In the absence of failures — when it actually matters to users — does it sacrifice my consistency for lower latency?**
 
 
-## What’s Next for 50Week50Papper?
+## What’s Next for #50PaperChallenge?
 
 That’s Whitepaper #1 done!
 Next week, I’m planning to dig into another classic — maybe something on consensus or data pipelines (not decided yet).
 
-If you found this helpful, or even just interesting, feel free to follow along. And if you have suggestions for what I should cover in the weeks ahead, drop them in the comments!
+If you found this helpful, or even just interesting, feel free to follow along. And if you have suggestions for what I should cover next, drop them in the comments!
 
-Onward to week 2
+Onward to the next paper
