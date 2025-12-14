@@ -487,6 +487,8 @@ span[class*='codeLineNumber'] {
   border-radius: 0;
   border: none;
   font-size: 0.9rem;
+  overflow: visible;
+  max-height: none;
 }
 
 .table-of-contents__link {
@@ -978,11 +980,20 @@ article[class*="blogPostContainer"] {
   align-self: flex-start;
   max-height: calc(100vh - var(--ifm-navbar-height) - 4rem);
   overflow-y: auto;
+  overflow-x: hidden;
   margin-left: 0;
   background: rgba(55, 55, 55, 0.4);
   border-radius: 4px;
   padding: 1.5rem;
   border: 1px solid rgba(255, 255, 255, 0.05);
+}
+
+/* Prevent nested scrolling in TOC - ensure only parent container scrolls */
+.col.col--2 .table-of-contents,
+.col--2 .table-of-contents,
+.col.col--3 .table-of-contents {
+  overflow: visible !important;
+  max-height: none !important;
 }
 
 /* Adjust layout when sidebar is hidden */
