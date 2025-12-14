@@ -15,7 +15,7 @@ In my **#50PaperChallenge** journey, I've been deliberately alternating between 
 
 LSM Trees are everywhere today — RocksDB, Cassandra, HBase, LevelDB, DynamoDB's storage engine — traces its lineage back to the LSM Tree. We configure them, tune them, and occasionally curse them during compaction storms — often without thinking too deeply about why the design works or what exact cost we’re paying for that performance. 
 
-When I first encountered LSM Trees years ago, I mentally bucketed them as “the write-optimized alternative to B-Trees” and moved on.
+When I first encountered LSM Trees years ago, I mentally bucketed them as “the write-optimized alternative to [B-Trees](https://15445.courses.cs.cmu.edu/fall2021/notes/07-trees.pdf)” and moved on.
 
 > <i>LSM Trees are faster for writes, slower for reads, and compaction is expensive.</i>
 
@@ -40,9 +40,9 @@ It’s tempting to frame the LSM Tree as an elegant data structure. That misses 
 
 LSM Trees were a reaction to a physical constraint: random I/O is expensive, and it stays expensive no matter how clever your indexing logic is.
 
-Before LSM Trees, the world ran on **B-Trees**.
+Before LSM Trees, the world ran on **[B-Trees](https://15445.courses.cs.cmu.edu/fall2021/notes/07-trees.pdf)**.
 
-Classic B-Trees assume that updating data in place is acceptable. Insert a row, modify a leaf, maybe split a page, propagate changes upward. On paper, it’s logarithmic and tidy. On spinning disks — and even on SSDs under sustained load — it turns into a steady stream of small, random writes.
+Classic [B-Trees](https://15445.courses.cs.cmu.edu/fall2021/notes/07-trees.pdf) assume that updating data in place is acceptable. Insert a row, modify a leaf, maybe split a page, propagate changes upward. On paper, it’s logarithmic and tidy. On spinning disks — and even on SSDs under sustained load — it turns into a steady stream of small, random writes.
 
 O’Neil’s paper is blunt about this:
 > <i> "Conventional disk-based index structures are unable to support high-volume transaction processing because of the cost of random disk I/O."
@@ -108,12 +108,12 @@ Once again, the theme is not elimination of cost — it’s redistribution of co
 One reason these papers still matter is that the industry tends to compress them into slogans.
 
 “LSM Trees are bad at reads.”
-“B-Trees don’t scale for writes.”
+“[B-Trees](https://15445.courses.cs.cmu.edu/fall2021/notes/07-trees.pdf) don’t scale for writes.”
 “SSDs make random I/O cheap.”
 
 Each statement contains a grain of truth and a lot of missing context.
 
-B-Trees remain excellent for read-heavy, latency-sensitive OLTP workloads with predictable access patterns. LSM Trees shine when write throughput dominates and background work can be amortized. SSDs improve random I/O, but they don’t make write amplification free — they just hide it until endurance or tail latency becomes the bottleneck.
+[B-Trees](https://15445.courses.cs.cmu.edu/fall2021/notes/07-trees.pdf) remain excellent for read-heavy, latency-sensitive OLTP workloads with predictable access patterns. LSM Trees shine when write throughput dominates and background work can be amortized. SSDs improve random I/O, but they don’t make write amplification free — they just hide it until endurance or tail latency becomes the bottleneck.
 
 The mistake is treating these designs as winners and losers instead of cost profiles.
 
@@ -143,7 +143,7 @@ When I look at an LSM-based system now, the first questions I ask are not about 
 - How much of the data path is dominated by values versus keys
 - What assumptions the design makes about storage media behavior
 
-If large values dominate your workload and compaction is your bottleneck, designs inspired by WiscKey are not exotic — they’re rational. If predictable read latency matters more than ingestion speed, a classic B-Tree or hybrid design may still be the right call.
+If large values dominate your workload and compaction is your bottleneck, designs inspired by WiscKey are not exotic — they’re rational. If predictable read latency matters more than ingestion speed, a classic [B-Tree](https://15445.courses.cs.cmu.edu/fall2021/notes/07-trees.pdf) or hybrid design may still be the right call.
 
 None of these choices are abstract. They surface directly in on-call rotations, hardware refresh cycles, and customer-facing latency charts.
 
