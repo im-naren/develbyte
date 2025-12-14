@@ -170,9 +170,9 @@ The authors show reductions in write amplification by **an order of magnitude** 
 
 In an LSM Tree:
 
-\[
-\text{Write Amplification} \approx \frac{\text{Total bytes written to disk}}{\text{Logical bytes written by user}}
-\]
+```
+Write Amplification ≈ (Total bytes written to disk) / (Logical bytes written by user)
+```
 
 Compaction across levels means the same data may be rewritten:
 
