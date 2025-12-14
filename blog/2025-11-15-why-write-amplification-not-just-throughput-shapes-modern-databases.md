@@ -7,17 +7,17 @@ tags: [distributed-systems, architecture, database, 50PaperChallenge, storage-en
 
 # Why Write Amplification, Not Just Throughput, Shapes Modern Databases
 
-*Lessons from LSM Trees and WiscKey — Paper #2 of #50PaperChallenge*
+*Lessons from LSM Trees and WiscKey — Paper #2 & #3 of #50PaperChallenge*
 
-<!--truncate-->
-
-## Introduction: Why This Paper, Why Now
+## Introduction: Why This Paper Stayed With Me
 
 In my **#50PaperChallenge** journey, I've been deliberately alternating between *foundational theory* and *systems papers that quietly changed the industry*. This pairing — **[LSM Tree (O’Neil et al., 1996)](https://dsf.berkeley.edu/cs286/papers/lsm-acta1996.pdf)** and **[WiscKey: Separating Keys from Values in SSD-Conscious Storage](https://pages.cs.wisc.edu/~ll/papers/wisckey_tos.pdf)** — sits squarely in that second category.
 
-Almost every database we touch today — RocksDB, Cassandra, HBase, LevelDB, DynamoDB's storage engine — traces its lineage back to the LSM Tree. Yet, for something so pervasive, most engineers (including me, until a few years ago) carry around a fuzzy mental model:
+LSM Trees are everywhere today — RocksDB, Cassandra, HBase, LevelDB, DynamoDB's storage engine — traces its lineage back to the LSM Tree. We configure them, tune them, and occasionally curse them during compaction storms — often without thinking too deeply about why the design works or what exact cost we’re paying for that performance. 
 
-> "LSM Trees are faster for writes, slower for reads, and compaction is expensive."
+When I first encountered LSM Trees years ago, I mentally bucketed them as “the write-optimized alternative to B-Trees” and moved on.
+
+> <i>LSM Trees are faster for writes, slower for reads, and compaction is expensive.</i>
 
 That's not wrong — but it's dangerously incomplete.
 <!--truncate-->
@@ -32,48 +32,92 @@ If you build databases, data platforms, or even just tune RocksDB configs in pro
 
 ## The Core Problem: Why B-Trees Started to Break
 
-Before LSM Trees, the world ran on **B-Trees**.
-
-They're elegant:
-
-* Reads are predictable.
-* Writes update data *in place*.
-* Height is logarithmic.
-* Everything feels neat and ordered.
-
-But B-Trees have an ugly secret: **random writes are poison for disks**.
-
-Every insert or update potentially triggers:
-
-* A page read
-* A page modification
-* A page write
-* Possibly a page split cascading upward
-
-On spinning disks, random I/O is orders of magnitude slower than sequential writes. O'Neil summarizes the pain succinctly:
-
-> "Conventional disk-based index structures are unable to support high-volume transaction processing because of the cost of random disk I/O."
-> — *O'Neil et al., 1996*
-
 The LSM Tree was not designed to be "cool."
 
 It was designed to **survive write-heavy workloads**.
 
-## LSM Trees in Plain Language
+It’s tempting to frame the LSM Tree as an elegant data structure. That misses the point.
+
+LSM Trees were a reaction to a physical constraint: random I/O is expensive, and it stays expensive no matter how clever your indexing logic is.
+
+Before LSM Trees, the world ran on **B-Trees**.
+
+Classic B-Trees assume that updating data in place is acceptable. Insert a row, modify a leaf, maybe split a page, propagate changes upward. On paper, it’s logarithmic and tidy. On spinning disks — and even on SSDs under sustained load — it turns into a steady stream of small, random writes.
+
+O’Neil’s paper is blunt about this:
+> <i> "Conventional disk-based index structures are unable to support high-volume transaction processing because of the cost of random disk I/O."
+> — *O'Neil et al., 1996*</i>
+
+The LSM Tree doesn’t eliminate work. It reorders work.
+
+Instead of paying the cost at write time, it batches writes in memory, flushes them sequentially, and defers reconciliation to background merges. This isn’t about reducing total I/O. It’s about turning chaotic I/O into something the storage device can survive.
+
+That distinction becomes important later.
+
+## What LSM Trees Actually Optimize For
 
 At a high level, an **LSM Tree trades read complexity for write efficiency**.
 
-Instead of updating data in place, it:
+One thing I had to unlearn while rereading the paper is the idea that LSM Trees make writes “fast.”
 
-1. Buffers writes in memory (the **memtable**).
-2. Flushes them sequentially to disk as immutable files (**SSTables**).
-3. Periodically merges and compacts these files in the background.
+They don’t — at least not in the way we often mean it.
 
-You don't overwrite data.
+LSM Trees optimize for sustained write bandwidth, not minimal write latency. Individual writes are cheap only because they’re buffered. The real cost shows up later, during compaction, when the system reconciles overlapping data across levels.
 
-You *append* and *reconcile later*.
+That deferred cost is the price you pay for smooth ingestion curves.
 
-### A Mental Model That Finally Clicked for Me
+This is why production LSM systems feel stable until they don’t. Everything looks fine — until compaction debt builds up faster than your disks can pay it down.
+
+And this is where write amplification stops being an abstract metric and starts becoming an operational problem.
+
+### Write Amplification: The Cost That Refuses to Disappear
+
+At a database level, write amplification is simple to define:
+
+> <i>How many bytes did the system write internally for every byte the user asked it to store?</i>
+
+In LSM Trees, amplification primarily comes from compaction. Data is written once to the memtable, flushed to disk, and then rewritten multiple times as it moves through levels. In leveled compaction schemes, it’s not unusual to see effective amplification in the 5–10× range under steady state, and higher under skewed workloads.
+
+What’s easy to miss is that this is only half the story.
+
+Those database-level rewrites land on storage devices that have their own internal write amplification due to flash translation layers, garbage collection, and wear leveling. When you stack the two, the physical device may end up writing far more than your database metrics suggest.
+
+The LSM Tree paper focuses on the database side. WiscKey is interesting because it implicitly acknowledges that the cost of rewriting data is no longer abstract once SSD endurance enters the picture.
+
+### Why WiscKey Feels Like an Obvious Idea in Hindsight
+
+WiscKey starts from a slightly uncomfortable observation: during compaction, most of the I/O cost often comes from rewriting values, not keys — even though values don’t meaningfully participate in ordering decisions.
+
+So it asks a question that feels almost naïve once you read it:
+
+Why are we forcing large values through the merge path at all?
+
+The answer, historically, was simplicity. Keeping keys and values together makes recovery, scans, and reads straightforward. WiscKey deliberately breaks that simplicity.
+
+Keys stay in the LSM Tree.
+Values go into an append-only log.
+
+Compaction now rewrites mostly keys and pointers — small, fixed-size data — while values remain untouched unless garbage collected later. The paper shows that for value-heavy workloads, this can reduce database-level write amplification by an order of magnitude.
+
+What WiscKey does not claim is equally important. It doesn’t say this design is universally better. It introduces new problems: value-log garbage collection, potential read amplification, and more complex crash recovery paths.
+
+Once again, the theme is not elimination of cost — it’s redistribution of cost.
+
+## Where Industry Mental Models Often Go Wrong
+
+One reason these papers still matter is that the industry tends to compress them into slogans.
+
+“LSM Trees are bad at reads.”
+“B-Trees don’t scale for writes.”
+“SSDs make random I/O cheap.”
+
+Each statement contains a grain of truth and a lot of missing context.
+
+B-Trees remain excellent for read-heavy, latency-sensitive OLTP workloads with predictable access patterns. LSM Trees shine when write throughput dominates and background work can be amortized. SSDs improve random I/O, but they don’t make write amplification free — they just hide it until endurance or tail latency becomes the bottleneck.
+
+The mistake is treating these designs as winners and losers instead of cost profiles.
+
+# A Mental Model That Finally Clicked for Me
 
 Think of an LSM Tree like:
 
@@ -88,182 +132,29 @@ The brilliance is not the data structure itself — it's the **I/O pattern**:
 * Batched reads
 * Deferred cleanup
 
-## My Takeaways from the LSM Paper
+### What This Changes for Me as a Practitioner
 
-### 1. LSM Trees Optimize for Write *Bandwidth*, Not Latency
+After revisiting these papers, I find myself thinking less about “which engine is faster” and more about where the inevitable work shows up.
 
-This is subtle and often misunderstood.
+When I look at an LSM-based system now, the first questions I ask are not about peak throughput, but about:
 
-LSM Trees don't make individual writes magically fast.
+- How compaction debt is monitored and controlled
+- Whether write amplification is measured explicitly
+- How much of the data path is dominated by values versus keys
+- What assumptions the design makes about storage media behavior
 
-They make **sustained write throughput** possible.
+If large values dominate your workload and compaction is your bottleneck, designs inspired by WiscKey are not exotic — they’re rational. If predictable read latency matters more than ingestion speed, a classic B-Tree or hybrid design may still be the right call.
 
-By batching, buffering, and deferring work, they:
+None of these choices are abstract. They surface directly in on-call rotations, hardware refresh cycles, and customer-facing latency charts.
 
-* Turn random writes into sequential ones
-* Push cost into background compaction
-* Smooth out spikes under heavy ingestion
+## Closing Thought
 
-This explains why LSM-based systems often show:
+Storage engine design is never about winning. It is about choosing which costs you are willing to pay, and when.
 
-* Stable p99 write latencies
-* But unpredictable read latencies under compaction pressure
+LSM Trees accept complexity to buy sustained write bandwidth. WiscKey pushes that logic further, questioning assumptions that held when disks, not flash, defined the cost model.
 
-### 2. Compaction Is Not an Implementation Detail — It *Is* the Cost Model
+I will end this entry in the #50PaperChallenge with a question rather than a conclusion:
 
-The paper spends an unusual amount of time analyzing **merge costs**.
+If you were designing a storage engine today—knowing how write amplification compounds across software and hardware layers—where would you choose to pay the cost, and which costs would you refuse to hide?
 
-That's intentional.
-
-Every write is paid for **multiple times**:
-
-* Written to memtable
-* Flushed to disk
-* Rewritten during compaction (possibly multiple levels)
-
-This is where **write amplification** is born.
-
-And this is where WiscKey enters the story.
-
-## Enter WiscKey: Separating Keys from Values
-
-WiscKey starts with an uncomfortable observation:
-
-> In LSM Trees, **large values dominate compaction cost** — but provide little benefit during sorting.
-
-In classic LSM designs:
-
-* Keys and values are stored together
-* Compaction rewrites *everything*
-* Even if values are large blobs rarely read
-
-### WiscKey's Core Idea
-
-**Separate keys from values.**
-
-* LSM Tree indexes:
-  * Keys
-  * Value pointers
-* Values live in an append-only **value log**
-* Compaction rewrites keys, not values
-
-This simple separation produces dramatic results:
-
-* **Lower write amplification**
-* **Faster compaction**
-* **Better SSD endurance**
-
-The authors show reductions in write amplification by **an order of magnitude** for value-heavy workloads.
-
-## The Technical Deep Dive (Without the Math Overdose)
-
-### Write Amplification, Quantified
-
-In an LSM Tree:
-
-```
-Write Amplification ≈ (Total bytes written to disk) / (Logical bytes written by user)
-```
-
-Compaction across levels means the same data may be rewritten:
-
-* 5–10× in typical configurations
-* Higher for skewed workloads
-
-WiscKey reduces this by:
-
-* Only rewriting keys (small, fixed-size)
-* Leaving values untouched unless garbage collected
-
-### The Trade-off WiscKey Accepts
-
-Nothing comes for free.
-
-WiscKey introduces:
-
-* **Garbage collection in the value log**
-* Potential **read amplification** (extra pointer chase)
-* More complex crash recovery
-
-This is the recurring theme across storage systems:
-
-> You don't eliminate costs — you *move* them.
-
-## Connecting This to Real Systems
-
-Once you see it, you can't unsee it.
-
-* **RocksDB**: Offers *BlobDB* and *separate value logs*
-* **Cassandra**: SSTables + compaction strategies tuned for write amplification
-* **DynamoDB**: Heavily inspired by LSM principles
-* **TiKV / Pebble**: Explicit engineering around compaction debt
-
-WiscKey isn't just a paper — it's a design lens.
-
-## Common Misconceptions This Paper Corrected for Me
-
-### Misconception 1: "LSM Trees Are Bad at Reads"
-
-Reality:
-
-* They're bad at *uncached point reads under compaction*
-* With Bloom filters, block caches, and tiered storage, reads are often fine
-
-### Misconception 2: "Compaction Is Background Work"
-
-No.
-
-Compaction is **deferred foreground cost**.
-
-If you don't budget for it:
-
-* Latencies spike
-* SSDs wear out
-* Throughput collapses under load
-
-### Misconception 3: "SSD Fixes Everything"
-
-WiscKey exists *because* SSDs exposed new bottlenecks:
-
-* Write endurance
-* Internal flash amplification
-* Garbage collection interference
-
-## Practical Design Guidelines
-
-If you're designing or operating an LSM-based system:
-
-### 1. Treat Compaction as a First-Class SLO
-
-* Monitor write amplification
-* Track compaction debt
-* Budget I/O explicitly
-
-### 2. Separate Hot Keys from Cold Values
-
-* Especially for large blobs
-* Logs, payloads, JSON documents
-
-### 3. Choose Compaction Strategy Intentionally
-
-* Size-tiered vs leveled is not cosmetic
-* It's a cost model decision
-
-### 4. Optimize for Your Dominant Workload
-
-* Write-heavy ingestion → LSM shines
-* Read-heavy OLTP → hybrid or B-Tree may win
-
-## Where Do We Go from Here?
-
-One thing this reading reinforced for me is that storage engine design is never about winning — it's about choosing which costs you're willing to pay, and when. LSM Trees pay upfront in complexity to buy write throughput. WiscKey pushes that idea further, questioning assumptions that had gone largely unchallenged for years.
-
-What I find most interesting is not whether LSM Trees or WiscKey-style designs are "better," but where each of these ideas quietly breaks down in real systems — under skewed workloads, under operational pressure, under imperfect hardware, and under human mistakes.
-
-So I'll end this entry in the #50PaperChallenge journey with a question for you:
-
-If you were designing a storage engine today — knowing everything we know about compaction, write amplification, SSD behavior, and real-world workloads — what would you choose to optimize for, and what costs would you deliberately accept?
-
-If you've wrestled with compaction storms, tuned RocksDB at 2 a.m., or discovered the hard way that "background work" is never really background, I'd love to hear your perspective.
-
-That conversation, more than any paper, is where the real learning happens.
+If you have wrestled with compaction storms or tuned RocksDB at 2 a.m., your answer is probably more interesting than any paper.
