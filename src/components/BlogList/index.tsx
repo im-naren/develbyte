@@ -18,10 +18,20 @@ export default function BlogList(): ReactNode {
   // Get all blog posts
   const allPosts = blogData?.blogPosts || [];
   
+  // Date cutoff: October 20, 2016
+  const cutoffDate = new Date('2016-10-20').getTime();
+  
+  // Filter posts older than October 20, 2016
+  const filteredPosts = allPosts.filter((post: any) => {
+    const postDate = new Date(post.metadata.date).getTime();
+    return postDate >= cutoffDate;
+  });
+  
   console.log('All Posts:', allPosts.length);
+  console.log('Filtered Posts (after Oct 20, 2016):', filteredPosts.length);
   
   // Sort by date (newest first)
-  const sortedPosts = [...allPosts].sort((a, b) => 
+  const sortedPosts = [...filteredPosts].sort((a, b) => 
     new Date(b.metadata.date).getTime() - new Date(a.metadata.date).getTime()
   );
   

@@ -34,21 +34,37 @@ function BlogListPageContent(props: Props): JSX.Element {
   const {metadata, items} = props;
   const [selectedTag, setSelectedTag] = useState<string | null>(null);
 
-  // Filter items based on selected tag
-  const filteredItems = useMemo(() => {
-    if (!selectedTag) return items;
-    return items.filter(({content: BlogPostContent}) => {
-      const tags = BlogPostContent.metadata.tags || [];
-      return tags.some((tag) => tag.label === selectedTag);
+  // Date cutoff: October 20, 2016
+  const cutoffDate = new Date('2016-10-20').getTime();
+
+  // Filter items based on date cutoff and selected tag
+  const {dateFilteredItems, filteredItems} = useMemo(() => {
+    // First filter by date (hide posts older than October 20, 2016)
+    const dateFiltered = items.filter(({content: BlogPostContent}) => {
+      const postDate = new Date(BlogPostContent.metadata.date).getTime();
+      return postDate >= cutoffDate;
     });
+
+    // Then filter by selected tag if any
+    const tagFiltered = !selectedTag 
+      ? dateFiltered 
+      : dateFiltered.filter(({content: BlogPostContent}) => {
+          const tags = BlogPostContent.metadata.tags || [];
+          return tags.some((tag) => tag.label === selectedTag);
+        });
+
+    return { dateFilteredItems: dateFiltered, filteredItems: tagFiltered };
   }, [items, selectedTag]);
 
-  // Extract all unique tags for the filter
+  // Extract all unique tags for the filter (only from posts after cutoff date)
   const allTags = React.useMemo(() => {
     const tagSet = new Set<string>();
     items.forEach(({content: BlogPostContent}) => {
-      const tags = BlogPostContent.metadata.tags || [];
-      tags.forEach((tag) => tagSet.add(tag.label));
+      const postDate = new Date(BlogPostContent.metadata.date).getTime();
+      if (postDate >= cutoffDate) {
+        const tags = BlogPostContent.metadata.tags || [];
+        tags.forEach((tag) => tagSet.add(tag.label));
+      }
     });
     return Array.from(tagSet).sort();
   }, [items]);
@@ -72,7 +88,7 @@ function BlogListPageContent(props: Props): JSX.Element {
             fontWeight: !selectedTag ? 600 : 400,
           }}
         >
-          All Posts ({items.length})
+          All Posts ({dateFilteredItems.length})
         </button>
         {allTags.map((tag) => (
           <button

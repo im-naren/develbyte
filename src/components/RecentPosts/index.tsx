@@ -22,9 +22,15 @@ interface RecentPostsProps {
 export default function RecentPosts({ currentPostId, limit = 5 }: RecentPostsProps): JSX.Element {
   const blogData = usePluginData('docusaurus-plugin-content-blog', 'default') as any;
   
-  // Get recent posts excluding the current post
+  // Date cutoff: October 20, 2016
+  const cutoffDate = new Date('2016-10-20').getTime();
+  
+  // Get recent posts excluding the current post and posts older than cutoff date
   const recentPosts = (blogData?.blogPosts || [])
-    .filter((post: BlogPost) => post.id !== currentPostId)
+    .filter((post: BlogPost) => {
+      const postDate = new Date(post.metadata.date).getTime();
+      return post.id !== currentPostId && postDate >= cutoffDate;
+    })
     .slice(0, limit);
 
   if (recentPosts.length === 0) {
